@@ -14,7 +14,9 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Data
         {
             this.ToTable("SpecialSaleStage");
             this.HasKey(c => c.Id);
-
+            this.Property(c => c.StartTime).HasColumnType("datetime2");
+            this.Property(c => c.EndTime).HasColumnType("datetime2");
+            
             this.HasRequired(c => c.SpecialSaleStageGroup)
                 .WithMany(c => c.SpecialSaleStages)
                 .HasForeignKey(c => c.SaleStageGroupId);

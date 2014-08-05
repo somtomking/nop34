@@ -47,6 +47,7 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Services
         public void UpdateSpecialSaleStageGroup(SpecialSaleStageGroup data)
         {
             data.LastUpdateTime = DateTime.Now;
+            
             _specialSaleStageGroupRepository.Update(data);
         }
 

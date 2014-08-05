@@ -93,9 +93,10 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
         {
             if (this.ModelState.IsValid)
             {
-                var data = model.ToEntity();
-                _specialSaleStageService.CreateSpecialSaleStageGroup(data);
-                var vm = data.ToModel();
+                var entity = _specialSaleStageService.GetSpecialSaleStageGroupById(model.Id);
+                entity = model.ToEntity(entity);
+                _specialSaleStageService.CreateSpecialSaleStageGroup(entity);
+                var vm = entity.ToModel();
                 vm.SaleGroupCreate.SpecialSaleStageGroupId = vm.Id;
 
                 SuccessNotification("添加特卖分组成功!");
@@ -125,8 +126,10 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
         {
             if (this.ModelState.IsValid)
             {
-                var data = model.ToEntity();
-                _specialSaleStageService.UpdateSpecialSaleStageGroup(data);
+                var entity = _specialSaleStageService.GetSpecialSaleStageGroupById(model.Id);
+                entity = model.ToEntity(entity);
+
+                _specialSaleStageService.UpdateSpecialSaleStageGroup(entity);
                 SuccessNotification("更新特卖分组成功!");
                 return continueEditing ? RedirectToAction("EditStageGroup", new { id = model.Id }) : RedirectToAction("List");
             }
@@ -145,8 +148,8 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
                     return Content("SpecialSaleStageGroupId is set!");
                 }
                 var group = _specialSaleStageService.GetSpecialSaleStageGroupById(model.SpecialSaleStageGroupId);
-
-                group.SpecialSaleStages.Add(model.ToEntity());
+                SpecialSaleStage entity = new SpecialSaleStage();
+                group.SpecialSaleStages.Add(model.ToEntity(entity));
                 _specialSaleStageService.UpdateSpecialSaleStageGroup(group);
 
                 return Json(new { Result = true });

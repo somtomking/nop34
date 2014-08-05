@@ -14,7 +14,8 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Data
         {
             this.ToTable("SpecialSaleStageGroup");
             this.HasKey(c => c.Id);
-
+            this.Property(c => c.CreateTime).HasColumnType("datetime2");
+            this.Property(c => c.LastUpdateTime).HasColumnType("datetime2");
          
         }
     }
