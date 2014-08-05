@@ -184,7 +184,9 @@
     <None Include="Views\WidgetsProductSpecialSale\_CreateOrUpdate.SaleStage.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="web.config" />
+    <None Include="web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Description.txt">
