@@ -1,7 +1,7 @@
 ﻿@model SpecialSaleStageQueryModel
 @{
     Layout = "";
-    var gridPageSize = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().GridPageSize;
+    var gridPageSize = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().GridPageSizes;
 }
 
 @using (Html.BeginForm())
