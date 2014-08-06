@@ -34,6 +34,7 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
         private readonly IStoreService _storeService;
         private readonly IPictureService _pictureService;
         private readonly ISettingService _settingService;
+        private readonly IProductService _productService;
         private readonly ICacheManager _cacheManager;
         private readonly ISpecialSaleStageService _specialSaleStageService;
         public WidgetsProductSpecialSaleController(
@@ -43,6 +44,7 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
             IPictureService pictureService,
             ISettingService settingService,
             ICacheManager cacheManager,
+           IProductService productService,
             ISpecialSaleStageService specialSaleStageService
             )
         {
@@ -53,6 +55,7 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
             this._settingService = settingService;
             this._cacheManager = cacheManager;
             this._specialSaleStageService = specialSaleStageService;
+            this._productService = productService;
         }
         #region 配置
         [AdminAuthorize]
@@ -250,6 +253,46 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
 
             return Json(saleStageList.Select(s => new { Id = s.Id, Name = s.Name }), JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult SaleStagePop(int? saleStageId)
+        {
+            if (!saleStageId.HasValue)
+            {
+                return Content("saleStageId can not null!");
+            }
+            var model = new SpecialSaleProductModel.AddSpecialSaleProductModel { SaleStageId = saleStageId.Value };
+            return View(GetViewPath("SaleStagePop"), model);
+        }
+
+        [HttpPost]
+        [FormValueRequired("save")]
+        public ActionResult SaleStagePop(string btnId, string formId, SpecialSaleProductModel.AddSpecialSaleProductModel model)
+        {
+            var saleStage = _specialSaleStageService.GetSpecialSaleStageById(model.SaleStageId);
+            if (model.SelectedProductIds != null)
+            {
+                foreach (var pId in model.SelectedProductIds)
+                {
+                    var p = _productService.GetProductById(pId);
+
+                    saleStage.SpecialSaleProducts.Add(new SpecialSaleProduct()
+                    {
+                        DisplayOrder = 0,
+                        OriginalPrice = p.Price,
+                        Quantity = model.Quantity,
+                        Price = model.Price,
+                        ProdcutId = pId
+                    });
+
+                }
+                _specialSaleStageService.UpdateSpecialSaleStageGroup(saleStage.SpecialSaleStageGroup);
+            }
+            ViewBag.RefreshPage = true;
+            ViewBag.btnId = btnId;
+            ViewBag.formId = formId;
+            return View(GetViewPath("SaleStagePop"), model);
+        }
+
         #endregion
 
 

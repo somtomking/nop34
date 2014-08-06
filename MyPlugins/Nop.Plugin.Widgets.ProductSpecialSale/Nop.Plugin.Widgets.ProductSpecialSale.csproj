@@ -181,6 +181,9 @@
     <Content Include="Views\WidgetsProductSpecialSale\_CreateOrUpdate.AddProduct.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\WidgetsProductSpecialSale\SaleStagePop.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Views\WidgetsProductSpecialSale\_CreateOrUpdate.SaleStage.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

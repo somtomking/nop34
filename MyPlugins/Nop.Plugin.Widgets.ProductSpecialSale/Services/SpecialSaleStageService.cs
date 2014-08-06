@@ -47,7 +47,7 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Services
         public void UpdateSpecialSaleStageGroup(SpecialSaleStageGroup data)
         {
             data.LastUpdateTime = DateTime.Now;
-            
+
             _specialSaleStageGroupRepository.Update(data);
         }
 
@@ -62,6 +62,11 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Services
         public IList<SpecialSaleStage> GetSpecialSaleStageBySaleGroupId(int p)
         {
             return _specialSaleStageRepository.Table.Where(s => s.SaleStageGroupId == p).ToList();
+        }
+
+        public SpecialSaleStage GetSpecialSaleStageById(int id)
+        {
+            return _specialSaleStageRepository.Table.FirstOrDefault(s => s.Id == id);
         }
     }
 }
