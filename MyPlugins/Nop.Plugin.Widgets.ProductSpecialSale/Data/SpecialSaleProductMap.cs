@@ -14,7 +14,8 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Data
         {
             this.ToTable("SpecialSaleProduct");
             this.HasKey(c => c.Id);
-
+            this.Property(p => p.Price).HasPrecision(18, 4);
+            this.Property(p => p.OriginalPrice).HasPrecision(18, 4);
             this.HasRequired(s => s.SpecialSaler).WithMany(s => s.SpecialSaleProducts).HasForeignKey(s => s.SpecialSalerId);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Nop.Core;
+using Nop.Core.Domain.Catalog;
 using Nop.Plugin.Widgets.ProductSpecialSale.Domain;
 using Nop.Plugin.Widgets.ProductSpecialSale.Models;
 using Nop.Plugin.Widgets.ProductSpecialSale.Services;
@@ -9,6 +10,8 @@ using Nop.Services.Helpers;
 using Nop.Services.Localization;
 using Nop.Services.Media;
 using Nop.Services.Orders;
+using Nop.Services.Vendors;
+using Nop.Web.Framework;
 using Nop.Web.Framework.Controllers;
 using System;
 using System.Collections.Generic;
@@ -37,6 +40,11 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
         private readonly IProductService _productService;
         private readonly ICacheManager _cacheManager;
         private readonly ISpecialSaleStageService _specialSaleStageService;
+        private readonly ICategoryService _categoryService;
+        private readonly IManufacturerService _manufacturerService;
+        private readonly ILocalizationService _localizationService;
+        private readonly IVendorService _vendorService;
+
         public WidgetsProductSpecialSaleController(
             IWorkContext workContext,
             IStoreContext storeContext,
@@ -45,7 +53,11 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
             ISettingService settingService,
             ICacheManager cacheManager,
            IProductService productService,
-            ISpecialSaleStageService specialSaleStageService
+            ISpecialSaleStageService specialSaleStageService,
+            ICategoryService categoryService,
+            IManufacturerService manufacturerService,
+            ILocalizationService localizationService,
+            IVendorService vendorService
             )
         {
             this._workContext = workContext;
@@ -56,6 +68,10 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
             this._cacheManager = cacheManager;
             this._specialSaleStageService = specialSaleStageService;
             this._productService = productService;
+            this._categoryService = categoryService;
+            this._manufacturerService = manufacturerService;
+            this._localizationService = localizationService;
+            this._vendorService = vendorService;
         }
         #region 配置
         [AdminAuthorize]
@@ -226,6 +242,17 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
             {
                 var vm = new SpecialSaleProductModel();
                 Mapper.DynamicMap(item, vm);
+                var product = item.GetProduct();
+                if (product != null)
+                {
+                    vm.ProductName = product.Name;
+                    vm.Sku = product.Sku;
+                }
+                else
+                {
+                    vm.ProductName = "未找到该产品！";
+                }
+
                 vmList.Add(vm);
             }
             data = new DataSourceResult()
@@ -261,6 +288,33 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
                 return Content("saleStageId can not null!");
             }
             var model = new SpecialSaleProductModel.AddSpecialSaleProductModel { SaleStageId = saleStageId.Value };
+
+
+            //categories
+            model.AvailableCategories.Add(new SelectListItem() { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
+            var categories = _categoryService.GetAllCategories(showHidden: true);
+            foreach (var c in categories)
+                model.AvailableCategories.Add(new SelectListItem() { Text = c.GetFormattedBreadCrumb(categories), Value = c.Id.ToString() });
+
+            //manufacturers
+            model.AvailableManufacturers.Add(new SelectListItem() { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
+            foreach (var m in _manufacturerService.GetAllManufacturers(showHidden: true))
+                model.AvailableManufacturers.Add(new SelectListItem() { Text = m.Name, Value = m.Id.ToString() });
+
+            //stores
+            model.AvailableStores.Add(new SelectListItem() { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
+            foreach (var s in _storeService.GetAllStores())
+                model.AvailableStores.Add(new SelectListItem() { Text = s.Name, Value = s.Id.ToString() });
+
+            //vendors
+            model.AvailableVendors.Add(new SelectListItem() { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
+            foreach (var v in _vendorService.GetAllVendors(0, int.MaxValue, true))
+                model.AvailableVendors.Add(new SelectListItem() { Text = v.Name, Value = v.Id.ToString() });
+
+            //product types
+            model.AvailableProductTypes = ProductType.SimpleProduct.ToSelectList(false).ToList();
+            model.AvailableProductTypes.Insert(0, new SelectListItem() { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
+
             return View(GetViewPath("SaleStagePop"), model);
         }
 

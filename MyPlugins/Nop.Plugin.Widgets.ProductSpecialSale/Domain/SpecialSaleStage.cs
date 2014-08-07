@@ -22,10 +22,10 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Domain
         /// <summary>
         /// 所在的卖场分组
         /// </summary>
-        public SpecialSaleStageGroup SpecialSaleStageGroup { get; set; }
+        public virtual SpecialSaleStageGroup SpecialSaleStageGroup { get; set; }
         public virtual ICollection<SpecialSaleProduct> SpecialSaleProducts { get; set; }
 
-        
+
     }
 
 }

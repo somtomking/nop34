@@ -61,7 +61,7 @@
         @Html.DropDownList("SearchStoreId", Model.AvailableStores)
       </td>
     </tr>
-    <tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+    <tr >
       <td class="adminTitle">
         @Html.NopLabelFor(model => model.SearchVendorId):
       </td>
@@ -87,7 +87,7 @@
   </p>
   <table class="adminContent">
     <tr>
-      <td>
+      <td colspan="2">
         <div id="products-grid"></div>
 
         <script>
@@ -97,7 +97,7 @@
                 type: "json",
                 transport: {
                   read: {
-                    url: "@Html.Raw(Url.Action("AssociatedProductAddPopupList", "Product"))",
+                    url: "/Admin/Product/AssociatedProductAddPopupList",
                     type: "POST",
                     dataType: "json",
                     data: additionalData

@@ -1,5 +1,6 @@
 ﻿using Nop.Core;
 using Nop.Core.Data;
+using Nop.Core.Domain.Orders;
 using Nop.Plugin.Widgets.ProductSpecialSale.Domain;
 using System;
 using System.Collections.Generic;
@@ -55,7 +56,7 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Services
         public IPagedList<SpecialSaleProduct> GetSpecialSaleStageProductList(int saleStageId, int page, int pageSize)
         {
             var query = _specialSaleProductRepository.Table;
-            query = from s in query where s.Id == saleStageId select s;
+            query = from s in query where s.Id == saleStageId orderby s.DisplayOrder select s;
             return new PagedList<SpecialSaleProduct>(query, page, pageSize);
         }
 

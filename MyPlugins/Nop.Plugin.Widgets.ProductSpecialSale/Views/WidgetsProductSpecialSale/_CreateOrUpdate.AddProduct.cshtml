@@ -6,7 +6,8 @@
     <td class="adminData">
       <select id="saleStageSel"></select>
       <input type="button" class="k-button" onclick="reLoadGroup()" value="刷新分组" />
-      <input type="button" class="k-button" onclick="addProduct()" value="添加商品" />
+        <input type="button" class="k-button" onclick="addProduct()" value="添加商品" />
+      <input type="button" style="display:none" id="btnRefreshSaleStage" onclick="refreshSaleStage()" />
     </td>
   </tr>
 
@@ -19,17 +20,17 @@
     <td colspan="2" class="adminData">
       <div id="saleStageProducts-grid"></div>
       <script>
-  var selectSaleStageId = 0;
-  $(document).ready(function () {
-    $("#saleStageProducts-grid").kendoGrid({
-      dataSource: {
-        type: "json",
-        transport: {
-          read: {
-            url: "@Html.Raw(Url.Action("SpecialSaleTageProductList", "WidgetsProductSpecialSale", new RouteValueDictionary() { { "Namespaces", "Nop.Plugin.Widgets.ProductSpecialSale" }, { "area", "" } }))&saleStageId=" + selectSaleStageId,
+        var selectSaleStageId = 0;
+        $(document).ready(function () {
+          $("#saleStageProducts-grid").kendoGrid({
+            dataSource: {
+              type: "json",
+              transport: {
+                read: {
+                  url: "@Html.Raw(Url.Action("SpecialSaleTageProductList", "WidgetsProductSpecialSale", new RouteValueDictionary() { { "Namespaces", "Nop.Plugin.Widgets.ProductSpecialSale" }, { "area", "" } }))",
                   type: "POST",
                   dataType: "json",
-
+                  data: additionalData
                 }
               },
               schema: {
@@ -98,8 +99,23 @@
         }
 
         function addProduct() {
-          
-          OpenWindow('@(Url.Action("AssociatedProductAddPopup", "Product", new { productId = Model.Id, btnId = "btnRefreshAssociatedProducts", formId = "product-form" }))    ', 800, 800, true);
+          var baseUrl = '@(Url.RouteUrl("Plugin.Widgets.ProductSpecialSale.AddProductPop"))';
+          var url = baseUrl + '/?saleStageId=' + $("#saleStageSel").val() + '&btnId=btnRefreshSaleStage';
+          OpenWindow(url, 800, 800, true);
+        }
+
+        function refreshSaleStage() {
+            
+          var grid = $('#saleStageProducts-grid').data('kendoGrid');
+          grid.dataSource.page(1); //new search. Set page size to 1
+         
+          grid.dataSource.read();
+          return false;
+        }
+        function additionalData() {
+          return {
+            saleStageId: $("#saleStageSel").val()
+          };
         }
       </script>
     </td>

@@ -20,6 +20,12 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale
                  new[] { "Nop.Plugin.Widgets.ProductSpecialSale.Controllers" }
             );
 
+            routes.MapRoute("Plugin.Widgets.ProductSpecialSale.AddProductPop",
+                 "Plugins/ProductSpecialSale/SaleStagePop",
+                 new { controller = "WidgetsProductSpecialSale", action = "SaleStagePop" },
+                 new[] { "Nop.Plugin.Widgets.ProductSpecialSale.Controllers" }
+            );
+
 
      
          
