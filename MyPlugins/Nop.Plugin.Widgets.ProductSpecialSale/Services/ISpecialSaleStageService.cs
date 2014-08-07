@@ -22,5 +22,8 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Services
         IList<SpecialSaleStage> GetSpecialSaleStageBySaleGroupId(int p);
 
         SpecialSaleStage GetSpecialSaleStageById(int id);
+
+        IList<int> GetReferencePictures();
+
     }
 }

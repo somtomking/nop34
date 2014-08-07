@@ -1,6 +1,7 @@
 ﻿using Nop.Core;
 using Nop.Core.Plugins;
 using Nop.Plugin.Widgets.ProductSpecialSale.Data;
+using Nop.Plugin.Widgets.ProductSpecialSale.Services;
 using Nop.Services.Cms;
 using Nop.Services.Configuration;
 using Nop.Services.Media;
@@ -13,22 +14,24 @@ using System.Web.Routing;
 
 namespace Nop.Plugin.Widgets.ProductSpecialSale
 {
-  public  class ProductSpecialSalePlugin : BasePlugin, IWidgetPlugin
+    public class ProductSpecialSalePlugin : BasePlugin, IWidgetPlugin
     {
         private readonly IPictureService _pictureService;
         private readonly ISettingService _settingService;
         private readonly IWebHelper _webHelper;
         private readonly ProductSpecialSaleObjectContext _objectContext;
-      public ProductSpecialSalePlugin(
-          IPictureService pictureService,
-            ISettingService settingService, IWebHelper webHelper, ProductSpecialSaleObjectContext objectContext
-          )
-      {
-          this._pictureService = pictureService;
-          this._settingService = settingService;
-          this._webHelper = webHelper;
-          this._objectContext = objectContext;
-      }
+        private readonly ISpecialSaleStageService _specialSaleStageService;
+        public ProductSpecialSalePlugin(
+            IPictureService pictureService,
+              ISettingService settingService, IWebHelper webHelper, ProductSpecialSaleObjectContext objectContext, ISpecialSaleStageService specialSaleStageService
+            )
+        {
+            this._pictureService = pictureService;
+            this._settingService = settingService;
+            this._webHelper = webHelper;
+            this._objectContext = objectContext;
+            this._specialSaleStageService = specialSaleStageService;
+        }
         public IList<string> GetWidgetZones()
         {
             return new string[] { "home_page_productspecialsale" };
@@ -56,13 +59,18 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale
         {
             _objectContext.Install();
             base.Install();
-       
+
         }
         public override void Uninstall()
         {
+            foreach (var pId in _specialSaleStageService.GetReferencePictures())
+            {
+                var pic = _pictureService.GetPictureById(pId);
+                _pictureService.DeletePicture(pic);
+            }
             _objectContext.Uninstall();
             base.Uninstall();
-            
+
         }
     }
 }

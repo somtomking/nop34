@@ -69,5 +69,10 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Services
         {
             return _specialSaleStageRepository.Table.FirstOrDefault(s => s.Id == id);
         }
+
+        public virtual IList<int> GetReferencePictures()
+        {
+            return _specialSaleStageRepository.Table.Select(s => s.PictureId).ToList();
+        }
     }
 }
