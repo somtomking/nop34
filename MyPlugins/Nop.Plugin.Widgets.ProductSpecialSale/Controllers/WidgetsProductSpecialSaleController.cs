@@ -96,7 +96,7 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
 
         private string GetViewPath(string viewName)
         {
-            return ViewPathHelper.GetViewPath(viewName);
+            return ViewPathHelper.GetViewPathForWidget(viewName);
         }
         #endregion
 
@@ -349,6 +349,8 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
 
         #endregion
 
+
+    
 
     }
 }

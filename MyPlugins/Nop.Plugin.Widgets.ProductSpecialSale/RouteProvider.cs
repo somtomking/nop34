@@ -26,9 +26,14 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale
                  new[] { "Nop.Plugin.Widgets.ProductSpecialSale.Controllers" }
             );
 
+            //前台呈现
+            routes.MapRoute("Plugin.Widgets.ProductSpecialSale.SpecialSaler",
+                "SpecialSale",
+                new { controller = "SpecialSaler", action = "Index", id = UrlParameter.Optional },
+                new[] { "Nop.Plugin.Widgets.ProductSpecialSale.Controllers" }
+           );
 
-     
-         
+
         }
         public int Priority
         {

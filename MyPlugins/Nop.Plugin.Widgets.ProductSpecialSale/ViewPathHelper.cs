@@ -9,10 +9,15 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale
     public class ViewPathHelper
     {
         private readonly static string _Widget_Path_Format = "~/Plugins/Widgets.ProductSpecialSale/Views/WidgetsProductSpecialSale/{0}.cshtml";
+        private readonly static string _Page_Path_Format = "~/Plugins/Widgets.ProductSpecialSale/Views/SpecialSaler/{0}.cshtml";
 
-        public static string GetViewPath(string viewName)
+        public static string GetViewPathForWidget(string viewName)
         {
             return string.Format(_Widget_Path_Format, viewName);
+        }
+        public static string GetViewPathForPage(string viewName)
+        {
+            return string.Format(_Page_Path_Format, viewName);
         }
     }
 }

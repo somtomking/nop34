@@ -133,6 +133,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\SpecialSalerController.cs" />
     <Compile Include="Controllers\WidgetsProductSpecialSaleController.cs" />
     <Compile Include="Data\SpecialSaleStageMap.cs" />
     <Compile Include="Data\SpecialSaleProductMap.cs" />
@@ -182,6 +183,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\WidgetsProductSpecialSale\SaleStagePop.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\SpecialSaler\Index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Views\WidgetsProductSpecialSale\_CreateOrUpdate.SaleStage.cshtml">
