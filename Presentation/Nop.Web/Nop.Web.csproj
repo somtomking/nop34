@@ -367,6 +367,7 @@
     <Compile Include="Validators\Common\ContactUsValidator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\InstalledPlugins.txt" />
     <Content Include="App_Data\Install\create_required_data.sql" />
     <Content Include="App_Data\Install\create_sample_data.sql" />
     <Content Include="App_Data\Localization\Installation\installation.ar.xml" />
@@ -402,6 +403,7 @@
     <Content Include="App_Data\Localization\Installation\installation.ur.xml" />
     <Content Include="App_Data\Localization\Installation\installation.vi.xml" />
     <Content Include="App_Data\Localization\Installation\installation.zhs.xml" />
+    <Content Include="App_Data\Settings.txt" />
     <Content Include="App_Data\SqlServer.StoredProcedures.sql" />
     <Content Include="App_Data\Localization\defaultResources.nopres.xml">
       <SubType>Designer</SubType>
@@ -1011,6 +1013,7 @@
     <Content Include="Content\Roxy_Fileman\lang\fr.json" />
     <Content Include="Content\kendo\2014.1.318\images\kendoui.woff" />
     <Content Include="Content\kendo\2014.1.318\images\kendoui.ttf" />
+    <None Include="Properties\PublishProfiles\Nop.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fineuploader\iframe.xss.response-4.2.2.js" />
     <Content Include="Scripts\fineuploader\jquery.fineuploader-4.2.2.js" />
@@ -2000,6 +2003,7 @@
     <Content Include="Themes\SpecialSale\Views\Shared\_Root.Head.cshtml" />
     <Content Include="Themes\SpecialSale\Views\ShoppingCart\Cart.cshtml" />
     <Content Include="Themes\SpecialSale\Views\Web.config" />
+    <Content Include="Themes\SpecialSale\Views\Product\ProductTemplate.Simple.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Plugins\bin\" />
