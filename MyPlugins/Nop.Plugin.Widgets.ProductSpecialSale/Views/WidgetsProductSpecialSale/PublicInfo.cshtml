@@ -1,1 +1,46 @@
-﻿<span>hello!</span>
+﻿@model IEnumerable<SpecialSaleStageGroupPubilcModel>
+ @{
+   Html.AddCssFileParts("~/Plugins/Widgets.ProductSpecialSale/Content/css/specialSale.css");
+ }
+<div class="w940">
+  @foreach (var group in Model)
+  {
+    <div id="floor_@group.Id" class="l-floor">
+      <div class="l-f-title">
+        <div class="l-f-tbox">@group.Name</div>
+      </div>
+      <div class="brands-list-wrap">
+        <ul class="brands-list clearfix">
+          @foreach (var saler in group.SaleStages)
+          {
+            <li class="brand-mid-v1">
+              <div class="brand-status">
+                <a title="@saler.Name" target="_blank" class="link-box">
+                  <img class="brand-img" />
+                  <img class="brand-logo" />
+                  <div class="statis">
+                    <span class="time-left">还剩：1天11小时29分</span>
+                    <span class="sold-num">
+                      <em>311</em>人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>@saler.Name</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  }
+</div>

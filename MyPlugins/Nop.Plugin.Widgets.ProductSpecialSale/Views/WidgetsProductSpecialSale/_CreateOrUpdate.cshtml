@@ -38,13 +38,13 @@
 
 @helper TabInfo()
 {
-    @Html.Partial(ViewPathHelper.GetViewPath( "_CreateOrUpdate.Info"), Model)
+    @Html.Partial(ViewPathHelper.GetViewPathForWidget("_CreateOrUpdate.Info"), Model)
 }
 @helper TabSaleGroup()
 {
-    @Html.Partial(ViewPathHelper.GetViewPath("_CreateOrUpdate.SaleStage"), Model.SaleGroupCreate)
+    @Html.Partial(ViewPathHelper.GetViewPathForWidget("_CreateOrUpdate.SaleStage"), Model.SaleGroupCreate)
 }
 @helper TabAddProduct()
 {
-    @Html.Partial(ViewPathHelper.GetViewPath("_CreateOrUpdate.AddProduct"), Model)
+    @Html.Partial(ViewPathHelper.GetViewPathForWidget("_CreateOrUpdate.AddProduct"), Model)
 }

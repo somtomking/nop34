@@ -147,6 +147,7 @@
     <Compile Include="Infrastructure\AutoMapperStartupTask.cs" />
     <Compile Include="Infrastructure\DependencyRegistrar.cs" />
     <Compile Include="MappingExtensions.cs" />
+    <Compile Include="Models\SpecialSaleStageGroupPubilcModel.cs" />
     <Compile Include="Models\SpecialSaleStageModel.cs" />
     <Compile Include="Models\SpecialSaleProductModel.cs" />
     <Compile Include="Models\SpecialSaleStageGroupModel.cs" />
@@ -161,6 +162,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <Content Include="Content\css\specialSale.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Views\WidgetsProductSpecialSale\Configure.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -201,7 +205,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\" />
     <Folder Include="Scripts\" />
     <Folder Include="Validators\" />
   </ItemGroup>

@@ -90,8 +90,32 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
         [ChildActionOnly]
         public ActionResult PublicInfo(string widgetZone)
         {
+            var groups = _specialSaleStageService.QuerySpecialSaleStage(0, 10);
+            IList<SpecialSaleStageGroupPubilcModel> gms = new List<SpecialSaleStageGroupPubilcModel>();
+            foreach (var group in groups)
+            {
+                var gm = new SpecialSaleStageGroupPubilcModel();
+                gm.Id = group.Id;
+                gm.Name = group.Name;
+                gm.Order = group.DisplayOrder;
+                foreach (var saler in group.SpecialSaleStages)
+                {
+                    gm.SaleStages.Add((new SpecialSaleStagePubilcModel()
+                    {
+                        EndDateTime = saler.StartTime,
+                        SartDateTime = saler.EndTime,
+                        Desc = saler.ShortDescription,
+                        Id = saler.Id,
+                        Name = saler.Name,
+                        Order = saler.DisplayOrder,
+                        ImgUrl = _pictureService.GetPictureUrl(saler.PictureId)
 
-            return View(GetViewPath("PublicInfo"));
+                    }));
+                }
+                gms.Add(gm);
+            }
+
+            return View(GetViewPath("PublicInfo"), gms);
         }
 
         private string GetViewPath(string viewName)
@@ -350,7 +374,7 @@ namespace Nop.Plugin.Widgets.ProductSpecialSale.Controllers
         #endregion
 
 
-    
+
 
     }
 }
