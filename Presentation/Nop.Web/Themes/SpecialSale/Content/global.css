@@ -1,0 +1,86 @@
+﻿html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, big, cite, code, del, em, font, img, ins, small, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+margin: 0;
+padding: 0;
+}
+
+body {
+font: 12px/150% Arial,Verdana,"\5b8b\4f53";
+color: #666;
+background: #fff;
+_background-image: url(about:blank);
+_background-attachment: fixed;
+}
+
+ol, ul {
+list-style: none;
+}
+li {
+display: list-item;
+text-align: -webkit-match-parent;
+}
+
+.w {
+width: 990px;
+margin: 0 auto;
+}
+a {
+color: #666;
+text-decoration: none;
+}
+a:-webkit-any-link {
+color: -webkit-link;
+text-decoration: underline;
+cursor: auto;
+}
+.ld {
+position: relative;
+zoom: 1;
+}
+
+#toppanel {
+position: relative;
+z-index: 1000;
+}
+
+#shortcut-2013 {
+width: 100%;
+border-bottom: 1px solid #eee;
+line-height: 30px;
+}
+#shortcut-2013, #shortcut-2013 .w {
+height: 30px;
+background: #F7F7F7;
+}
+#shortcut-2013 li {
+height: 30px;
+padding: 0 11px 0 12px;
+}
+#shortcut-2013 li s {
+top: 9px;
+left: 0;
+width: 0;
+height: 12px;
+border-left: 1px solid #DDD;
+overflow: hidden;
+}
+.ld s, .ld b, .ld .block {
+position: absolute;
+overflow: hidden;
+}
+.fl {
+float: left;
+}
+
+.fr {
+float: right;
+}
+
+.lh {
+overflow: hidden;
+zoom: 1;
+}
+ 
+
+.lh li, .lh dl, .lh .item {
+float: left;
+}

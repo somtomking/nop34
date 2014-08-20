@@ -32,6 +32,20 @@ li {
     display: list-item;
     text-align: -webkit-match-parent;
 }
+
+a:hover {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:-webkit-any-link {
+color: -webkit-link;
+text-decoration: underline;
+cursor: auto;
+}
 /****************************/
 
 .w940 {
@@ -146,9 +160,10 @@ li.brand-mid-v1 {
             padding: 5px 0;
             font-weight: 700;
         }
-        li.brand-mid-v1 .brand-bg .brand-metas .num {
- 
-}
+
+            li.brand-mid-v1 .brand-bg .brand-metas .num {
+            }
+
         li.brand-mid-v1 .brand-bg .btn {
             height: 38px;
             width: 139px;
@@ -166,6 +181,14 @@ li.brand-mid-v1 {
         right: 30px;
         height: 45px;
     }
+
+.ju-pc .brands-list .link-box:hover, .ju-pc .ju-itemlist .link-box:hover {
+    border-color: #f72862;
+    outline: #f72862 solid 1px;
+    -webkit-box-shadow: 0 0 5px #f72862;
+    -moz-box-shadow: 0 0 5px #f72862;
+    box-shadow: 0 0 5px #f72862;
+}
 
 .brand-status {
 }
