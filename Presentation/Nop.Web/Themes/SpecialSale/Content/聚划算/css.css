@@ -1,0 +1,245 @@
+body{
+	color: red;	
+}
+body, button, input, select, textarea {
+    font: 12px/1.5 "Microsoft Yahei","Hiragino Sans GB",tahoma,arial;
+}
+blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    background: url('http://gtms04.alicdn.com/tps/i4/T1huWTXrXbXXaKqpTX-14-272.png') repeat-x scroll center top #F2F2F2;
+}
+.clearfix {
+}
+.clearfix:after {
+    content: " ";
+    display: block;
+    height: 0px;
+    clear: both;
+}
+ol, ul {
+    list-style: none outside none;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+fieldset, img {
+    border: 0px none;
+}
+/****全局结束****/
+
+
+
+.w940 {
+    width: 940px;
+    margin: 0px auto;
+}
+.l-floor {
+    width: 940px;
+    margin: 20px auto 30px;
+    position: relative;
+    border-bottom: 1px dashed #C2C2C3;
+    padding-bottom: 10px;
+}
+.l-floor .l-f-title {
+    background-color: #B52A64;
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    font-size: 18px;
+    color: #FFF;
+    text-indent: 10px;
+    margin-bottom: 10px;
+}
+.brands-list-wrap {
+    width: 940px;
+}
+.brands-list-wrap {
+    overflow: visible;
+}
+.brands-list-wrap .brands-list {
+    width: 960px;
+    min-height: 210px;
+}
+.brands-list-wrap ul {
+    width: 1040px;
+}
+.brands-list-wrap ul li {
+    position: relative;
+}
+li.brand-mid-v1 {
+    float: left;
+    margin: 0px 16px 16px 0px;
+    background: none repeat scroll 0% 0% #FFF;
+}
+
+.ju-pc.ks-firefox .brands-list .link-box:hover, .ju-pc.ks-firefox .ju-itemlist .link-box:hover {
+    outline: 0px none !important;
+}
+
+.ju-pc .brands-list .link-box:hover, .ju-pc .ju-itemlist .link-box:hover {
+    border-color: #F72862;
+    outline: 1px solid #F72862;
+    box-shadow: 0px 0px 5px #F72862;
+}
+
+li.brand-mid-v1 .link-box {
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    height: 224px;
+    width: 460px;
+}
+
+.ju-pc .brands-list .brand-img, .ju-pc .ju-itemlist .brand-pic, .ju-pc .ju-itemlist .item-pic {
+    background: url('http://gtms01.alicdn.com/tps/i1/T1KnkzFfReXXbPHZfp-82-82.gif') no-repeat scroll center center #FCFCFC !important;
+}
+
+li.brand-mid-v1 .brand-img {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    height: 200px;
+    width: 300px;
+}
+
+li.brand-mid-v1 .statis {
+    position: absolute;
+    left: 12px;
+    bottom: 14px;
+    line-height: 20px;
+    text-indent: 5px;
+    color: #FFF;
+    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.7);
+    height: 20px;
+    width: 300px;
+}
+
+li.brand-mid-v1 .statis .sold-num {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    color: #FFF;
+}
+
+li.brand-mid-v1 .brand-bg {
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    text-align: center;
+    height: 200px;
+    width: 140px;
+    overflow: hidden;
+}
+
+li.brand-mid-v1 .brand-bg h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    margin-top: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+li.brand-mid-v1 .brand-bg .brand-metas {
+    color: #F72862;
+    padding: 5px 0px;
+    font-weight: 700;
+}
+li.brand-mid-v1 .brand-bg {
+    text-align: center;
+}
+li.brand-mid-v1 .brand-logo {
+    position: absolute;
+    z-index: 1;
+    top: 26px;
+    right: 30px;
+    height: 45px;
+}
+
+li.brand-mid-v1 .brand-bg .brand-metas strong.num {
+    font-size: 36px;
+    display: inline-block;
+    vertical-align: bottom;
+    height: 36px;
+    line-height: 36px;
+    font-family: Tahoma;
+}
+
+li.brand-mid-v1 .brand-bg .btn {
+    height: 38px;
+    width: 139px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font: 0px/0 a;
+    background: url('http://gtms02.alicdn.com/tps/i2/TB15Pt3FVXXXXcSXpXXpOxIKXXX-146-497.png') no-repeat scroll 0px -458px #EBEDFF;
+}
+
+/****品牌展示结束***/
+
+.fixed-nav {
+    position: absolute;
+    left: 50%;
+    margin-left: 490px;
+    top: 453px;
+    border-right: 1px solid #D4D4D4;
+    border-width: 4px 1px 1px;
+    border-style: solid;
+    border-color: #B72868 #D4D4D4 #D4D4D4;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    line-height: 33px;
+    font-size: 12px;
+    width: 90px;
+    text-align: center;
+    z-index: 10000;
+    background: none repeat scroll 0% 0% #FFF;
+    display: none;
+}
+.fixed-nav li.selected:after {
+    top: 32px;
+    right: -5px;
+    width: 0px;
+    height: 0px;
+    margin-left: 1px;
+    border-width: 2px;
+    border-color: #B20E3F transparent transparent #B20E3F;
+    border-style: solid dashed dashed solid;
+}
+.fixed-nav li.selected:before {
+    width: 6px;
+    height: 32px;
+    background: none repeat scroll 0% 0% #EDB4CD;
+    top: 0px;
+    right: -6px;
+}
+.fixed-nav li.selected:after, .fixed-nav li.selected:before {
+    content: ".";
+    font: 0px/0 a;
+    position: absolute;
+    display: block;
+}
+
+.fixed-nav li a {
+    color: #B52A64;
+    display: inline-block;
+    height: 33px;
+    width: 100%;
+}
+a {
+    text-decoration: none;
+}
+
+.fixed-nav li.tomorrow a {
+    color: #4AB479;
+}

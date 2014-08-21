@@ -1911,6 +1911,8 @@
     <Content Include="Themes\DefaultClean\Content\images\progress-step-inactive.gif" />
     <Content Include="Themes\DefaultClean\Content\styles.css" />
     <Content Include="Themes\print.css" />
+    <Content Include="Themes\SpecialSale\Content\Cart.html" />
+    <Content Include="Themes\SpecialSale\Content\global.css" />
     <Content Include="Themes\SpecialSale\Content\ie6.css" />
     <Content Include="Themes\SpecialSale\Content\ie7.css" />
     <Content Include="Themes\SpecialSale\Content\images\ajax_loader_large.gif" />
@@ -1947,9 +1949,12 @@
     <Content Include="Themes\SpecialSale\Content\images\top-menu-list-image-hover.png" />
     <Content Include="Themes\SpecialSale\Content\images\top-menu-list-image.png" />
     <Content Include="Themes\SpecialSale\Content\images\top-menu-triangle.png" />
+    <Content Include="Themes\SpecialSale\Content\Index.html" />
     <Content Include="Themes\SpecialSale\Content\responsive.css" />
     <Content Include="Themes\SpecialSale\Content\styles.css" />
     <Content Include="Themes\SpecialSale\Content\styles.rtl.css" />
+    <Content Include="Themes\SpecialSale\Content\聚划算\Base.HTML" />
+    <Content Include="Themes\SpecialSale\Content\聚划算\css.css" />
     <Content Include="Themes\SpecialSale\preview.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
