@@ -6,6 +6,293 @@
     <link rel="stylesheet" href="global.css" />
 </head>
 <body>
+    <div class="w w1 header clearfix">
+        <div id="logo"><a href="http://www.jd.com/"><img clstag="clickcart|keycount|xincart|logo" src="http://misc.360buyimg.com/lib/img/e/logo-201305.png" title="返回京东商城首页" alt="返回京东商城首页"></a></div>
+        <div class="language"><a href="javascript:void(0);" onclick="toEnCart()"></a></div>
+        <div class="progress clearfix">
+            <ul class="progress-1">
+                <li class="step-1"><b></b>1.我的购物车</li>
+                <li class="step-2"><b></b>2.填写核对订单信息</li>
+                <li class="step-3">3.成功提交订单</li>
+            </ul>
+        </div>
+    </div>
+    <div class="w cart">
+        <div class="cart-hd group">
+            <h2>我的购物车</h2>
+            <span id="show2" class="fore">   </span>
+        </div>
 
+        <textarea style="display: none;" id="cart_pin" class="message">
+            {if cart!=null}
+            {if pin == null || pin == ""}
+            &lt;span&gt;现在&nbsp;&lt;/span&gt;&lt;a class="btn" href="javascript:goToLogin();"&gt;&lt;span class="btn-text"&gt;登录&lt;/span&gt;&lt;/a&gt;&lt;span&gt;， 您购物车中的商品将被永久保存&lt;/span&gt;
+            {/if}
+            {/if}
+        </textarea>
+        <div id="show">
+            <input value="1" id="isLogin" type="hidden">
+            <input value="1023651571,1237973096" id="ids" type="hidden">
+            <input value="1023651571,1237973096" id="allSkuIds" type="hidden">
+            <input value="2786.00" id="shoppingmoney" type="hidden">
+            <!-- 延保和赠品宏定义开始 -->
+            <!-- 延保和赠品宏定义结束 -->
+
+            <div class="cart-frame">
+                <div class="tl"></div>
+                <div class="tr"></div>
+            </div>
+            <div class="cart-inner">
+                <div class="cart-thead clearfix">
+                    <div class="column t-checkbox form"><input data-cart="toggle-cb" id="toggle-checkboxes" checked="" value="" type="checkbox"><label for="toggle-checkboxes">全选</label></div>
+                    <div class="column t-goods">商品</div>
+                    <div class="column t-price">京东价</div>
+                    <div class="column t-promotion">优惠</div>
+                    <div class="column t-inventory">
+                        <div id="inventory" clstag="clickcart|keycount|xincart|kucunshai">
+                            <span id="location" title="湖南">湖南</span>
+                        </div>
+                    </div>
+                    <div class="column t-quantity">数量</div>
+                    <div class="column t-action">操作</div>
+                </div>
+                <div id="product-list" class="cart-tbody">
+                    <!-- ************************商品开始********************* -->
+                    <!-- ***************************************************** -->
+                    <!-- 主商品 -->
+                    <div id="product_1023651571" data-bind="rowid:1" class="item item_selected ">
+                        <div class="item_form clearfix">
+                            <div class="cell p-checkbox"><input data-bind="cbid:1" class="checkbox" name="checkItem" checked="" value="1023651571-1" type="checkbox"></div>
+                            <div class="cell p-goods">
+                                <div class="p-img"><a href="http://item.jd.com/1023651571.html" target="_blank"><img clstag="clickcart|keycount|xincart|p-imglistcart" src="http://img10.360buyimg.com/n5/g12/M00/0D/02/rBEQYVGq3UwIAAAAAADm2n4RZ8wAACjkgF2qqwAAOby133.jpg" alt="英国Joie巧儿宜艾儿系列/超轻便型/四轮减震婴幼儿手推车 内置蚊帐 支持货到付款 老款橙色"></a></div>
+                                <div class="p-name"><a href="http://item.jd.com/1023651571.html" clstag="clickcart|keycount|xincart|productnamelink" target="_blank">英国Joie巧儿宜艾儿系列/超轻便型/四轮减震婴幼儿手推车 内置蚊帐 支持货到付款 老款橙色</a><span class="promise411" id="promise411_1023651571"></span></div>
+                            </div>
+                            <div class="cell p-price"><span class="price">¥488.00</span></div>
+                            <div class="cell p-promotion">
+
+
+                            </div>
+                            <div class="cell p-inventory stock-1023651571">有货</div>
+                            <div class="cell p-quantity" for-stock="for-stock-1023651571">
+                                <div class="quantity-form" data-bind="">
+                                    <a href="javascript:void(0);" class="decrement" clstag="clickcart|keycount|xincart|diminish1" id="decrement-1023651571-1-1">-</a>
+                                    <input class="quantity-text" value="1" id="changeQuantity-1023651571-1-1-0" type="text">
+                                    <a href="javascript:void(0);" class="increment" clstag="clickcart|keycount|xincart|add1" id="increment-1023651571-1-1-0">+</a>
+                                </div>
+                            </div>
+                            <div class="cell p-remove">
+                                <a id="remove-1023651571-1" data-name="英国Joie巧儿宜艾儿系列/超轻便型/四轮减震..." data-more="removed-488.00-1" clstag="clickcart|keycount|xincart|btndel318558" class="cart-remove" href="javascript:void(0);">删除</a>
+
+                                <div style="display: none;" class="modify-pre">
+                                    <a href="javascript:void(0);" id="modifyPromotions-1023651571-1">修改优惠</a>
+                                    <div class="dialog" style="display:none;">
+                                        <div class="dialog-outer">
+                                            <span class="dialog-bg dialog-bg-n"></span>
+                                            <span class="dialog-bg dialog-bg-ne"></span>
+                                            <span class="dialog-bg dialog-bg-e"></span>
+                                            <span class="dialog-bg dialog-bg-se"></span>
+                                            <span class="dialog-bg dialog-bg-s"></span>
+                                            <span class="dialog-bg dialog-bg-sw"></span>
+                                            <span class="dialog-bg dialog-bg-w"></span>
+                                            <span class="dialog-bg dialog-bg-nw"></span>
+                                            <span class="dialog-arrow"></span>
+                                            <div class="dialog-inner">
+                                                <ul class="cho-favor">
+                                                    <li>
+                                                        <label>单品优惠：</label>
+                                                        <select class="sel" id="modifyProductPromSel"></select>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">活动优惠：</label>
+                                                        <select class="sel" id="modifyPromSel"></select>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">&nbsp;</label>
+                                                        <a class="btn-submit" href="javascript:void(0);" data-bind="1023651571-1">确定</a>
+                                                        <a class="btn-cancel" href="javascript:void(0);">取消</a>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- modify-pre end  -->
+                            </div>
+                        </div>
+                        <div class="item_extra">
+                            <!-- 延保服务按钮异步加载 -->
+                            <div class="sku-yanBao newJdService clearfix" data="skuYb_1023651571_">
+                            </div>
+
+                            <!-- 多个延保 -->
+                            <!-- 赠品 -->
+                            <div class="p-gift clearfix">
+                                <div class="gift-table">
+                                    <div class="gift-item">
+                                        <span class="gift-name">
+                                            [赠品]
+                                            凉席 “支持货到付款” 通用凉席
+                                        </span>
+                                        <span class="gift-inventory  no-stock">
+                                            &nbsp;
+                                        </span>
+                                        <span class="gift-quantity">1</span>
+                                        <span class="gift-action"></span>
+                                    </div>
+                                    <div class="gift-item">
+                                        <span class="gift-name">
+                                            [赠品]
+                                            加厚水彩虹推车 餐椅 棉垫 送完即止 水彩虹 棉垫
+                                        </span>
+                                        <span class="gift-inventory  no-stock">
+                                            &nbsp;
+                                        </span>
+                                        <span class="gift-quantity">1</span>
+                                        <span class="gift-action"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- 延保和赠品 -->
+
+                    </div>
+                    <!-- 主商品 -->
+                    <div id="product_1237973096" data-bind="rowid:2" class="item item_selected ">
+                        <div class="item_form clearfix">
+                            <div class="cell p-checkbox"><input data-bind="cbid:2" class="checkbox" name="checkItem" checked="" value="1237973096-1" type="checkbox"></div>
+                            <div class="cell p-goods">
+                                <div class="p-img"><a href="http://item.jd.com/1237973096.html" target="_blank"><img clstag="clickcart|keycount|xincart|p-imglistcart" src="http://img10.360buyimg.com/n5/jfs/t184/215/2745883958/215742/76e98522/53db41cfN95951f52.jpg" alt="vivo X3L 4G手机 TD-LTE/TD-SCDMA/GSM 极光白"></a></div>
+                                <div class="p-name"><a href="http://item.jd.com/1237973096.html" clstag="clickcart|keycount|xincart|productnamelink" target="_blank">vivo X3L 4G手机 TD-LTE/TD-SCDMA/GSM 极光白</a><span class="promise411" id="promise411_1237973096"></span></div>
+                            </div>
+                            <div class="cell p-price"><span class="price">¥2298.00</span></div>
+                            <div class="cell p-promotion">
+
+
+                            </div>
+                            <div class="cell p-inventory stock-1237973096">有货</div>
+                            <div class="cell p-quantity" for-stock="for-stock-1237973096">
+                                <div class="quantity-form" data-bind="">
+                                    <a href="javascript:void(0);" class="decrement" clstag="clickcart|keycount|xincart|diminish1" id="decrement-1237973096-1-1">-</a>
+                                    <input class="quantity-text" value="1" id="changeQuantity-1237973096-1-1-0" type="text">
+                                    <a href="javascript:void(0);" class="increment" clstag="clickcart|keycount|xincart|add1" id="increment-1237973096-1-1-0">+</a>
+                                </div>
+                            </div>
+                            <div class="cell p-remove">
+                                <a id="remove-1237973096-1" data-name="vivo X3L 4G手机 TD-LTE/TD-SCDMA/GSM 极光..." data-more="removed-2298.00-1" clstag="clickcart|keycount|xincart|btndel318558" class="cart-remove" href="javascript:void(0);">删除</a>
+
+                                <div style="display: none;" class="modify-pre">
+                                    <a href="javascript:void(0);" id="modifyPromotions-1237973096-1">修改优惠</a>
+                                    <div class="dialog" style="display:none;">
+                                        <div class="dialog-outer">
+                                            <span class="dialog-bg dialog-bg-n"></span>
+                                            <span class="dialog-bg dialog-bg-ne"></span>
+                                            <span class="dialog-bg dialog-bg-e"></span>
+                                            <span class="dialog-bg dialog-bg-se"></span>
+                                            <span class="dialog-bg dialog-bg-s"></span>
+                                            <span class="dialog-bg dialog-bg-sw"></span>
+                                            <span class="dialog-bg dialog-bg-w"></span>
+                                            <span class="dialog-bg dialog-bg-nw"></span>
+                                            <span class="dialog-arrow"></span>
+                                            <div class="dialog-inner">
+                                                <ul class="cho-favor">
+                                                    <li>
+                                                        <label>单品优惠：</label>
+                                                        <select class="sel" id="modifyProductPromSel"></select>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">活动优惠：</label>
+                                                        <select class="sel" id="modifyPromSel"></select>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">&nbsp;</label>
+                                                        <a class="btn-submit" href="javascript:void(0);" data-bind="1237973096-1">确定</a>
+                                                        <a class="btn-cancel" href="javascript:void(0);">取消</a>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- modify-pre end  -->
+                            </div>
+                        </div>
+                        <div class="item_extra">
+                            <!-- 延保服务按钮异步加载 -->
+                            <div class="sku-yanBao newJdService clearfix" data="skuYb_1237973096_">
+                            </div>
+
+                            <!-- 多个延保 -->
+                            <!-- 赠品 -->
+                            <div class="p-gift clearfix">
+                                <div class="gift-table">
+                                    <div class="gift-item">
+                                        <span class="gift-name">
+                                            [赠品]
+                                            vivo原装移动电源
+                                        </span>
+                                        <span class="gift-inventory  no-stock">
+                                            &nbsp;
+                                        </span>
+                                        <span class="gift-quantity">1</span>
+                                        <span class="gift-action"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- 延保和赠品 -->
+
+                    </div>
+                    <!-- ************************商品结束***************** -->
+                    <!-- ************************************************* -->
+                    <!-- ************************普通套装开始******************** -->
+                    <!-- ******************************************************** -->
+                    <!-- ************************普通套装结束**************** -->
+                    <!-- **************************************************** -->
+                    <!-- ************************特殊套装开始****************** -->
+                    <!-- ***************************************************** -->
+                    <!-- ************************特殊套装结束***************** -->
+                    <!-- **************************************************** -->
+
+                </div><!-- product-list结束 -->
+                <div class="cart-toolbar clearfix">
+                    <div class="control fl">
+                        <span class="delete"><b></b><a href="javascript:void(0);" clstag="clickcart|keycount|xincart|clearcartlink" id="remove-batch">删除选中的商品</a></span>
+                    </div>
+                    <div class="total fr">
+                        <p><span id="totalSkuPrice">¥2786.00</span>总计：</p>
+                        <p><span id="totalRePrice">- ¥0.00</span>返现：</p>
+                    </div>
+                    <div class="amout fr"><span id="selectedCount">2</span> 件商品</div>
+                </div>
+                <div class="cart-total clearfix">
+                    <div class="control fl clearfix">
+                        <!--
+                        <a href="javascript:void(0);" class="btn gray-btn btn-storage"  clstag="clickcart|keycount|xincart|savecartlink" alt="点击'寄存'后，京东商城将为您保存购物车内的商品，方便您随时随地去结算"  title="点击'寄存'后，京东商城将为您保存购物车内的商品，方便您随时随地去结算"><span class="btn-icon"></span><span class="btn-text">寄存</span></a>
+                        <a href="javascript:void(0);" class="btn gray-btn btn-takeout" alt="点击'取出'后，您可取出之前寄存在购物车内的商品" title="点击'取出'后，您可取出之前寄存在购物车内的商品"><span class="btn-icon"></span><span class="btn-text">取出</span></a>
+                        -->
+                    </div>
+                    <div class="total fr"><span id="finalPrice" data-bind="2786.00">¥2786.00</span>总计（不含运费）：</div>
+                    <!--<div class="delivery fr">本订单已经免运费</div> -->
+                </div>
+            </div><!-- cart-inner结束 -->
+
+            <div class="cart-frame">
+                <div class="bl"></div>
+                <div class="br"></div>
+            </div>
+            <div class="cart-button clearfix">
+                <a class="btn continue" href="http://item.jd.com/1060844.html" clstag="clickcart|keycount|xincart|continueBuyBtn" id="continue"><span class="btn-text">继续购物</span></a>
+                <a class="checkout" href="javascript:goToOrder();" clstag="clickcart|keycount|xincart|gotoOrderInfo" id="toSettlement">去结算<b></b></a>
+            </div>
+        </div>
+
+        <div class="cart-removed" style="display:none;">
+            <div class="r-title">已删除商品，您可以重新购买或加关注：</div>
+        </div>
+    </div>
 </body>
 </html>
