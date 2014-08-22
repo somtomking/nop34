@@ -1,10 +1,10 @@
 ﻿@{
     Layout = "~/Views/Shared/_Root.Head.cshtml";
 }
-@Html.Widget("body_start_html_tag_after")
+
  
 
-<div class="master-wrapper-page">
+@*<div class="master-wrapper-page">
     @Html.Action("JavaScriptDisabledWarning", "Common")
     <div class="master-wrapper-content">
         <script type="text/javascript">
@@ -23,6 +23,26 @@
         @Html.Widget("content_after")
     </div>
     @Html.Action("Footer", "Common")
-</div>
+</div>*@
  
+
+@Html.Widget("body_start_html_tag_after")
+<div id="shortcut-2013">
+    <div class="w">
+        <ul class="fl lh">
+            <li class="fore1 ld"><b></b><a href="javascript:addToFavorite()" rel="nofollow">收藏</a></li>
+        </ul>
+        <ul class="fr lh">
+            <li class="fore1" id="loginbar">lst-009，欢迎来到商城！<a href="#" class="link-logout">[退出]</a></li>
+            <li class="fore2 ld">
+                <s></s>
+                <a href="#" rel="nofollow">我的订单</a>
+            </li>
+
+
+        </ul>
+        <span class="clr"></span>
+    </div>
+    @RenderBody()
+</div>
 @Html.Widget("body_end_html_tag_before")
