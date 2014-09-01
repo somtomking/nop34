@@ -1,6 +1,6 @@
 ﻿Group: Widgets
 FriendlyName: 产品特卖
-SystemName: Widgets.PrimaryCategory
+SystemName: Widgets.ProductSpecialSale
 Version: 1.0
 SupportedVersions: 3.40
 Author: exp team

@@ -1,0 +1,2354 @@
+﻿@{
+  Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+}
+<style>
+  
+.w940 {
+    width: 940px;
+    margin: 0px auto;
+}
+.l-floor {
+    width: 940px;
+    margin: 20px auto 30px;
+    position: relative;
+    border-bottom: 1px dashed #C2C2C3;
+    padding-bottom: 10px;
+}
+.l-floor .l-f-title {
+    background-color: #B52A64;
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    font-size: 18px;
+    color: #FFF;
+    text-indent: 10px;
+    margin-bottom: 10px;
+}
+.brands-list-wrap {
+    width: 940px;
+}
+.brands-list-wrap {
+    overflow: visible;
+}
+.brands-list-wrap .brands-list {
+    width: 960px;
+    min-height: 210px;
+}
+.brands-list-wrap ul {
+    width: 1040px;
+}
+.brands-list-wrap ul li {
+    position: relative;
+}
+li.brand-mid-v1 {
+    float: left;
+    margin: 0px 16px 16px 0px;
+    background: none repeat scroll 0% 0% #FFF;
+}
+
+.ju-pc.ks-firefox .brands-list .link-box:hover, .ju-pc.ks-firefox .ju-itemlist .link-box:hover {
+    outline: 0px none !important;
+}
+
+.ju-pc .brands-list .link-box:hover, .ju-pc .ju-itemlist .link-box:hover {
+    border-color: #F72862;
+    outline: 1px solid #F72862;
+    box-shadow: 0px 0px 5px #F72862;
+}
+
+li.brand-mid-v1 .link-box {
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    height: 224px;
+    width: 460px;
+}
+
+.ju-pc .brands-list .brand-img, .ju-pc .ju-itemlist .brand-pic, .ju-pc .ju-itemlist .item-pic {
+    background: url('http://gtms01.alicdn.com/tps/i1/T1KnkzFfReXXbPHZfp-82-82.gif') no-repeat scroll center center #FCFCFC !important;
+}
+
+li.brand-mid-v1 .brand-img {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    height: 200px;
+    width: 300px;
+}
+
+li.brand-mid-v1 .statis {
+    position: absolute;
+    left: 12px;
+    bottom: 14px;
+    line-height: 20px;
+    text-indent: 5px;
+    color: #FFF;
+    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.7);
+    height: 20px;
+    width: 300px;
+}
+
+li.brand-mid-v1 .statis .sold-num {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    color: #FFF;
+}
+
+li.brand-mid-v1 .brand-bg {
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    text-align: center;
+    height: 200px;
+    width: 140px;
+    overflow: hidden;
+}
+
+li.brand-mid-v1 .brand-bg h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    margin-top: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+li.brand-mid-v1 .brand-bg .brand-metas {
+    color: #F72862;
+    padding: 5px 0px;
+    font-weight: 700;
+}
+li.brand-mid-v1 .brand-bg {
+    text-align: center;
+}
+li.brand-mid-v1 .brand-logo {
+    position: absolute;
+    z-index: 1;
+    top: 26px;
+    right: 30px;
+    height: 45px;
+}
+
+li.brand-mid-v1 .brand-bg .brand-metas strong.num {
+    font-size: 36px;
+    display: inline-block;
+    vertical-align: bottom;
+    height: 36px;
+    line-height: 36px;
+    font-family: Tahoma;
+}
+
+li.brand-mid-v1 .brand-bg .btn {
+    height: 38px;
+    width: 139px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font: 0px/0 a;
+    background: url('http://gtms02.alicdn.com/tps/i2/TB15Pt3FVXXXXcSXpXXpOxIKXXX-146-497.png') no-repeat scroll 0px -458px #EBEDFF;
+}
+
+/****品牌展示结束***/
+
+.fixed-nav {
+    position: absolute;
+    left: 50%;
+    margin-left: 490px;
+    top: 453px;
+    border-right: 1px solid #D4D4D4;
+    border-width: 4px 1px 1px;
+    border-style: solid;
+    border-color: #B72868 #D4D4D4 #D4D4D4;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    line-height: 33px;
+    font-size: 12px;
+    width: 90px;
+    text-align: center;
+    z-index: 10000;
+    background: none repeat scroll 0% 0% #FFF;
+    display: none;
+}
+.fixed-nav li.selected:after {
+    top: 32px;
+    right: -5px;
+    width: 0px;
+    height: 0px;
+    margin-left: 1px;
+    border-width: 2px;
+    border-color: #B20E3F transparent transparent #B20E3F;
+    border-style: solid dashed dashed solid;
+}
+.fixed-nav li.selected:before {
+    width: 6px;
+    height: 32px;
+    background: none repeat scroll 0% 0% #EDB4CD;
+    top: 0px;
+    right: -6px;
+}
+.fixed-nav li.selected:after, .fixed-nav li.selected:before {
+    content: ".";
+    font: 0px/0 a;
+    position: absolute;
+    display: block;
+}
+
+.fixed-nav li a {
+    color: #B52A64;
+    display: inline-block;
+    height: 33px;
+    width: 100%;
+}
+a {
+    text-decoration: none;
+}
+
+.fixed-nav li.tomorrow a {
+    color: #4AB479;
+}
+</style>
+<div class="page home-page">
+  <div class="page-body">
+    @Html.Widget("home_page_top")
+    @*@Html.Action("TopicBlock", "Topic", new { systemName = "HomePageText" })*@
+    @*@Html.Action("HomePagePolls", "Poll")*@
+    @*@Html.Action("HomepageProducts", "Product")*@
+    @*@Html.Action("HomepageBestSellers", "Product")
+    @Html.Action("HomePageNews", "News")
+    @Html.Action("HomepageCategories", "Catalog")
+    @Html.Widget("home_page_bottom")*@
+
+    <div class="w940">
+      <div class="l-floor J_Floor" id="floor1">
+        <div class="l-f-title">
+          <div class="l-f-tbox">流行服饰</div>
+        </div>
+        <div class="brands-list-wrap">
+          <ul data-spm-max-idx="20" class="brands-list clearfix" data-spm="b">
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d1" title="新风尚特卖会" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d1.GI9efV&amp;act_sign_id=2885721" target="_blank" data-spm="d1" asid="2885721">
+                  <img src="http://gju2.alicdn.com/bao/uploaded/i2/10000048082009431/TB2tKDlaXXXXXayXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg" class="brand-img">
+                  <img src="http://gju1.alicdn.com/bao/uploaded/i1/10000048082137266/TB2JLTmaXXXXXapXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg" class="brand-logo">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>130</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>新风尚特卖会</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.6</strong> <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d2" title="超级大牌秋装上新" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d2.GI9efV&amp;act_sign_id=3072123" target="_blank" data-spm="d2" asid="3072123">
+                  <img src="http://gju1.alicdn.com/bao/uploaded/i3/10000048054707020/TB27EPeaXXXXXaRXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg" class="brand-img">
+                  <img src="http://gju4.alicdn.com/bao/uploaded/i2/10000047982770867/TB2_YDfaXXXXXbGXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg" class="brand-logo">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>5148</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>超级大牌秋装上新</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.2</strong> <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d3" title="换季特惠囤" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d3.GI9efV&amp;act_sign_id=2886144" target="_blank" data-spm="d3" asid="2886144">
+                  <img src="http://gju4.alicdn.com/bao/uploaded/i4/10000048192417212/TB2zJYmaXXXXXbuXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg" class="brand-img">
+                  <img src="http://gju4.alicdn.com/bao/uploaded/i3/10000049698019830/TB2Z0LvaXXXXXXvXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg" class="brand-logo">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>790</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>换季特惠囤</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.3</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d4" title="秋冬新品全网首发" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d4.GI9efV&amp;act_sign_id=3072283" target="_blank" data-spm="d4" asid="3072283">
+                  <img src="http://gju3.alicdn.com/bao/uploaded/i3/10000061136700392/TB2s_niaXXXXXcvXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg" class="brand-img">
+                  <img src="http://gju2.alicdn.com/bao/uploaded/i3/10000048204539491/TB2TErkaXXXXXbOXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg" class="brand-logo">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>1426</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>秋冬新品全网首发</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.2</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d5" title="全智贤款秋装新品" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d5.GI9efV&amp;act_sign_id=3069124" target="_blank" data-spm="d5" asid="3069124">
+                  <img src="http://gju4.alicdn.com/bao/uploaded/i1/10000060968304415/TB2k2jcaXXXXXbcXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg" class="brand-img">
+                  <img src="http://gju2.alicdn.com/bao/uploaded/i1/10000060968460225/TB2HqreaXXXXXbRXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg" class="brand-logo">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>11674</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>全智贤款秋装新品</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.1</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d6" title="真丝秋上新1元秒" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d6.GI9efV&amp;act_sign_id=2888725" target="_blank" data-spm="d6" asid="2888725">
+                  <img src="http://gju3.alicdn.com/bao/uploaded/i2/10000048326304667/TB2HLPUaXXXXXbdXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg" class="brand-img">
+                  <img src="http://gju2.alicdn.com/bao/uploaded/i4/10000048256583467/TB29KPmaXXXXXctXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg" class="brand-logo">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>626</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>真丝秋上新1元秒</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.4</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d7" title="超级大牌日" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d7.GI9efV&amp;act_sign_id=3072120" target="_blank" data-spm="d7" asid="3072120">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i2/10000048880919692/TB2kpCFaXXXXXb.XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i4/10000046941537993/TB2T1CGaXXXXXaUXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>4551</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>超级大牌日</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.7</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d8" title="秋装特卖惠" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d8.GI9efV&amp;act_sign_id=2888728" target="_blank" data-spm="d8" asid="2888728">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i2/10000061082496499/TB21EjiaXXXXXaHXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i2/10000047769910199/TB2Xb_faXXXXXXBXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>1049</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>秋装特卖惠</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.9</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d9" title="超级大牌58元起" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d9.GI9efV&amp;act_sign_id=3073099" target="_blank" data-spm="d9" asid="3073099">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i2/10000047764502551/TB2Hj50aXXXXXa1XpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i1/10000060760636237/TB2kt17aXXXXXa7XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>5999</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>超级大牌58元起</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.1</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d10" title="润微女神盛夏诱惑" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d10.GI9efV&amp;act_sign_id=3073343" target="_blank" data-spm="d10" asid="3073343">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i3/10000046966169783/TB2rDWGaXXXXXbTXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i4/10000047193836800/TB2jkOLaXXXXXXrXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>2630</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>润微女神盛夏诱惑</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d11" title="美式性感粗犷真实" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d11.GI9efV&amp;act_sign_id=3099155" target="_blank" data-spm="d11" asid="3099155">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i3/10000047890803177/TB2A5bXaXXXXXa8XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i4/10000047559908871/TB2DrYXaXXXXXa4XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>361</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>美式性感粗犷真实</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d12" title="国际顶尖性感内衣" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d12.GI9efV&amp;act_sign_id=2955313" target="_blank" data-spm="d12" asid="2955313">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i2/10000047965494518/TB2cOreaXXXXXaeXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i4/10000047457185793/TB2TazeaXXXXXcCXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>968</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>国际顶尖性感内衣</h4>
+                    <div class="brand-metas">
+                      <strong class="num">3</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d13" title="法式清新夏忆思秋" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d13.GI9efV&amp;act_sign_id=2881359" target="_blank" data-spm="d13" asid="2881359">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000047440110646/TB2gOSEaXXXXXcdXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i4/10000046953269722/TB2kCOHaXXXXXa0XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg"> <i class="icon-new"></i>
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>3519</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>法式清新夏忆思秋</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.1</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d14" title="秋季新品全网首发" class="link-box" href="http://act.ju.taobao.com/market/ju/luotuannanzhuang.php?spm=608.5847453.b.d14.GI9efV" target="_blank" data-spm="d14" asid="2878238">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i4/10000048209710967/TB2laHnaXXXXXcUXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i4/10000048522445001/TB2U6TOaXXXXXXHXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg"> <i class="icon-new"></i>
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>3418</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>秋季新品全网首发</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.6</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d15" title="金利来秋上新大促" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d15.GI9efV&amp;act_sign_id=2891469" target="_blank" data-spm="d15" asid="2891469">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i3/10000047898338143/TB2sh6raXXXXXX2XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i4/10000048155777486/TB2JRLraXXXXXXNXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>620</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>金利来秋上新大促</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.9</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d16" title="春夏内衣清仓团" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d16.GI9efV&amp;act_sign_id=2900248" target="_blank" data-spm="d16" asid="2900248">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i4/10000048217069395/TB2ASvraXXXXXa5XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i3/10000048217085334/TB2fBDoaXXXXXa1XpXXXXXXXXXX_!!0-1-juitemmedia.gif_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>14872</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>春夏内衣清仓团</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.8</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d17" title="羊绒秋冬新品首发" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d17.GI9efV&amp;act_sign_id=2900763" target="_blank" data-spm="d17" asid="2900763">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i4/10000049926059947/TB2c0zGaXXXXXXoXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i2/10000047676406448/TB2V2YfaXXXXXa_XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+                  <i class="icon-new"></i>
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>3497</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>羊绒秋冬新品首发</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.9</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d18" title="马克华菲旗下潮牌" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d18.GI9efV&amp;act_sign_id=2879662" target="_blank" data-spm="d18" asid="2879662">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i3/10000049567287577/TB2AYDgaXXXXXbxXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i2/10000048113738989/TB2sajiaXXXXXcTXXXXXXXXXXXX_!!0-2-juitemmedia.png_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>3429</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>马克华菲旗下潮牌</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.8</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a data-spm-anchor-id="608.5847453.b.d19" title="爱在初秋" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?spm=608.5847453.b.d19.GI9efV&amp;act_sign_id=2885416" target="_blank" data-spm="d19" asid="2885416">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i4/10000048093205686/TB2GQzWaXXXXXXlXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i3/10000047825507485/TB27pm0aXXXXXbiXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>6287</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>爱在初秋</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.3</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <!-- tms:659247 -->
+
+            <li class="brands-item">
+              <a data-spm-anchor-id="608.5847453.b.20" href="http://ju.taobao.com/?spm=608.5847453.b.20.GI9efV#!/list?stype=default&amp;reverse=&amp;page=1&amp;frontCatId=1000&amp;type=0" target="_blank">
+                <img class="logo" alt="" src="http://img03.taobaocdn.com/imgextra/i3/263817957/T275YqXwRaXXXXXXXX-263817957.jpg" height="210" width="460">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="l-floor J_Floor" id="floor2">
+        <div class="l-f-title">
+          <div class="l-f-tbox">运动鞋包</div>
+        </div>
+        <div class="brands-list-wrap">
+          <ul class="brands-list clearfix" data-spm="b">
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="秋冬新款首波来袭" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3088714" target="_blank" data-spm="d1" asid="3088714">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i4/10000048031277438/TB2vUTfaXXXXXatXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i2/10000047597297734/TB2U5riaXXXXXbkXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>89</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>秋冬新款首波来袭</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="季末清仓立减5元" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3073345" target="_blank" data-spm="d2" asid="3073345">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i2/10000060609844263/TB2cWaMaXXXXXcjXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i4/10000048987891910/TB2QrSNaXXXXXbRXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>1981</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>季末清仓立减5元</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.2</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="奢华箱包五折起" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3023654" target="_blank" data-spm="d3" asid="3023654">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i3/10000046878970295/TB2tV9jaXXXXXXoXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i2/10000048634903816/TB2SVCgaXXXXXatXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>73</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>奢华箱包五折起</h4>
+                    <div class="brand-metas">
+                      <strong class="num">5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="阿迪达斯" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3069196" target="_blank" data-spm="d4" asid="3069196">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i2/10000047526534457/TB2hhR.XpXXXXciXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i2/10000047840070673/TB2b3TbaXXXXXcNXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>2416</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>阿迪达斯</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.6</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="迪士尼仲夏钜惠" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3036053" target="_blank" data-spm="d5" asid="3036053">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i1/10000049643667538/TB2jJzraXXXXXXpXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i1/10000048191594938/TB2iAPoaXXXXXa6XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>361</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>迪士尼仲夏钜惠</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.9</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="满599减50" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3068142" target="_blank" data-spm="d6" asid="3068142">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i4/10000047588876759/TB2lKPbaXXXXXazXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000049165611779/TB2OyqYaXXXXXXYXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>801</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>满599减50</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.8</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="阿迪达斯夏日聚惠" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3038101" target="_blank" data-spm="d7" asid="3038101">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i1/10000047453770489/TB2vgS0aXXXXXcOXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i4/10000047279981724/TB2jKa7aXXXXXavXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>199</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>阿迪达斯夏日聚惠</h4>
+                    <div class="brand-metas">
+                      <strong class="num">3.9</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="全场66元起" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3040101" target="_blank" data-spm="d8" asid="3040101">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i1/10000047549198577/TB2Q99OaXXXXXaAXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000047062257582/TB26jeQaXXXXXaqXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>158</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>全场66元起</h4>
+                    <div class="brand-metas">
+                      <strong class="num">4.5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="澳洲自由风尚" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3045880" target="_blank" data-spm="d9" asid="3045880">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i3/10000047810751168/TB2eJqYaXXXXXbxXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i1/10000047479500999/TB2cPC2aXXXXXXjXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>103</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>澳洲自由风尚</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.6</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="买即送斜跨手机包" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2866170" target="_blank" data-spm="d10" asid="2866170">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i2/10000047271953291/TB29TmyaXXXXXaIXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i2/10000047059464862/TB2tICuaXXXXXXKXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+                  <i class="icon-new"></i>
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>1947</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>买即送斜跨手机包</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="乐播诗大牌狂欢日" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3073153" target="_blank" data-spm="d11" asid="3073153">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i2/10000047078176576/TB2qz5yaXXXXXbdXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i1/10000060466064034/TB2cWawaXXXXXc8XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>822</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>乐播诗大牌狂欢日</h4>
+                    <div class="brand-metas">
+                      <strong class="num">3.2</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="超越无限" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3057583" target="_blank" data-spm="d12" asid="3057583">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i2/10000048698451957/TB2JN1oaXXXXXavXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i4/10000046944078399/TB2zueuaXXXXXXHXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>297</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>超越无限</h4>
+                    <div class="brand-metas">
+                      <strong class="num">3.3</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="最后清仓29元起" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3025224" target="_blank" data-spm="d13" asid="3025224">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i2/10000047493686306/TB2tyi7aXXXXXcMXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i2/10000048894371988/TB2.kyAaXXXXXX.XpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>244</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>最后清仓29元起</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.6</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="源自新加坡的时尚" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3053702" target="_blank" data-spm="d14" asid="3053702">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i2/10000047481938971/TB2nfGIaXXXXXb5XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i1/10000047481026703/TB2zz1EaXXXXXa0XpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>395</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>源自新加坡的时尚</h4>
+                    <div class="brand-metas">
+                      <strong class="num">4</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="触碰新风尚新品团" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2884919" target="_blank" data-spm="d15" asid="2884919">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i2/10000047985318848/TB2oojcaXXXXXc6XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i2/10000060983240376/TB2_0jcaXXXXXXoXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>752</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>触碰新风尚新品团</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.8</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="殿堂级奢华大牌" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2951192" target="_blank" data-spm="d16" asid="2951192">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000047400206758/TB2ceuBaXXXXXcjXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i1/10000047468899034/TB2dueFaXXXXXayXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>53</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>殿堂级奢华大牌</h4>
+                    <div class="brand-metas">
+                      <strong class="num">3.5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="reebok" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3183084" target="_blank" data-spm="d17" asid="3183084">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i3/10000047987586042/TB2BtDraXXXXXakXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i3/10000048244893287/TB20jbpaXXXXXavXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>454</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>reebok</h4>
+                    <div class="brand-metas">
+                      <strong class="num">4.5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="感受无可替代" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3121237" target="_blank" data-spm="d18" asid="3121237">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i2/10000060544548066/TB2D01HaXXXXXaLXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i4/10000047511335012/TB2noSIaXXXXXaDXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>421</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>感受无可替代</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="秋冬新品发布会" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2950293" target="_blank" data-spm="d19" asid="2950293">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i3/10000048309603473/TB2uJnqaXXXXXbKXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000047971480754/TB2Y5LmaXXXXXX7XpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>326</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>秋冬新品发布会</h4>
+                    <div class="brand-metas">
+                      <strong class="num">5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="秋上新 新品首发" class="link-box" href="http://act.ju.taobao.com/market/ju/201408yierkang.php/?act_sign_id=2920059" target="_blank" data-spm="d20" asid="2920059">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i2/10000048182603219/TB29F6jaXXXXXaeXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i3/10000061113836305/TB2LIYkaXXXXXb1XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+                  <i class="icon-new"></i>
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>4075</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>秋上新 新品首发</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.7</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="新品团聚划算专场" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2835083" target="_blank" data-spm="d21" asid="2835083">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000048145353218/TB2FqzoaXXXXXavXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i1/10000047816610282/TB2GwviaXXXXXXBXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+                  <i class="icon-new"></i>
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>7646</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>新品团聚划算专场</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.1</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="康莉季末特惠" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2888336" target="_blank" data-spm="d22" asid="2888336">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i1/10000059858496039/TB2YKdPaXXXXXX6XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i3/10000048207671886/TB2b0hIaXXXXXaOXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>499</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>康莉季末特惠</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="德国名牌享誉全球" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2892075" target="_blank" data-spm="d23" asid="2892075">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i3/10000048634418902/TB23v22aXXXXXX3XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i4/10000048606858711/TB2.qbUaXXXXXcJXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时28分</span>
+                    <span class="sold-num">
+                      <em>615</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>德国名牌享誉全球</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.9</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="换季清仓+新品团" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2883930" target="_blank" data-spm="d24" asid="2883930">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000048201891167/TB20lrmaXXXXXXMXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000048201455469/TB2VVYkaXXXXXcgXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>939</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>换季清仓+新品团</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.7</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="l-floor J_Floor" id="floor3">
+        <div class="l-f-title">
+          <div class="l-f-tbox">美容饰品</div>
+        </div>
+        <div class="brands-list-wrap">
+          <ul class="brands-list clearfix" data-spm="b">
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="年轻肌密发布惠" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2980016" target="_blank" data-spm="d1" asid="2980016">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i2/10000061105516485/TB2jjTkaXXXXXaVXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i2/10000061105824038/TB2OLbjaXXXXXbFXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>579</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>年轻肌密发布惠</h4>
+                    <div class="brand-metas">
+                      <strong class="num">4.5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="799再减50" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3017671" target="_blank" data-spm="d2" asid="3017671">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i4/10000048153275457/TB2tSPfaXXXXXaNXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i4/10000059876340399/TB2V2BSaXXXXXavXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>21</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>799再减50</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.7</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="超级大牌团" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3068289" target="_blank" data-spm="d3" asid="3068289">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i3/10000047385181095/TB28GCGaXXXXXbtXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i1/10000047182060507/TB2qJuFaXXXXXczXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>779</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>超级大牌团</h4>
+                    <div class="brand-metas">
+                      <strong class="num">8.5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="美国大牌奢镜" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2951381" target="_blank" data-spm="d4" asid="2951381">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i1/10000049644967595/TB2b1rjaXXXXXbmXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i3/10000046239357067/TB2bh38XVXXXXX4XpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>128</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>美国大牌奢镜</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.7</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="时尚 靓丽 潮流" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2952106" target="_blank" data-spm="d5" asid="2952106">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i1/10000046634642957/TB21bdFaXXXXXaRXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i3/10000046634690530/TB2mjFDaXXXXXcgXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>107</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>时尚 靓丽 潮流</h4>
+                    <div class="brand-metas">
+                      <strong class="num">5.5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="改写你的肌肤命运" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2953130" target="_blank" data-spm="d6" asid="2953130">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i2/10000046533270300/TB2vS4VaXXXXXX2XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i1/10000048284355620/TB2fvdVaXXXXXX2XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>21</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>改写你的肌肤命运</h4>
+                    <div class="brand-metas">
+                      <strong class="num">5.3</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="茱莉蔻聚名品专场" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2954103" target="_blank" data-spm="d7" asid="2954103">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i2/10000047249751409/TB2L9OlaXXXXXcgXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i4/10000059736784140/TB24q4HaXXXXXX8XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>56</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>茱莉蔻聚名品专场</h4>
+                    <div class="brand-metas">
+                      <strong class="num">7</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="韩后绿色情人节" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2801610" target="_blank" data-spm="d8" asid="2801610">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i1/10000049943075568/TB2tNnOaXXXXXX2XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i1/10000049942951710/TB2cvnMaXXXXXbwXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天22小时29分</span>
+                    <span class="sold-num">
+                      <em>791</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>韩后绿色情人节</h4>
+                    <div class="brand-metas">
+                      <strong class="num">3.8</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="超级大牌日品牌团" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3071160" target="_blank" data-spm="d9" asid="3071160">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i1/10000047029358307/TB2JBWxaXXXXXbSXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i3/10000047354386506/TB2F1aAaXXXXXb4XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>586</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>超级大牌日品牌团</h4>
+                    <div class="brand-metas">
+                      <strong class="num">8.6</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="贝吉獾聚名品专场" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2990020" target="_blank" data-spm="d10" asid="2990020">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i4/10000045964429615/TB2VIRlaXXXXXc5XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i3/10000059539188189/TB2hdlmaXXXXXclXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>2469</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>贝吉獾聚名品专场</h4>
+                    <div class="brand-metas">
+                      <strong class="num">4.1</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="世界顶级奢侈品牌" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2976452" target="_blank" data-spm="d11" asid="2976452">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i2/10000046433324792/TB2FAJIaXXXXXbZXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i1/10000046433364502/TB2UDFLaXXXXXaeXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>276</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>世界顶级奢侈品牌</h4>
+                    <div class="brand-metas">
+                      <strong class="num">4</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="3CE聚名品专场" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2957099" target="_blank" data-spm="d12" asid="2957099">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i3/10000046349616638/TB2QBpvaXXXXXblXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000046605122831/TB2b2xxaXXXXXaCXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>2694</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>3CE聚名品专场</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.9</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="专业医学美容护肤" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3020690" target="_blank" data-spm="d13" asid="3020690">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i1/10000048294655628/TB2_08UaXXXXXbSXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i3/10000048294611767/TB2iYFUaXXXXXbmXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>711</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>专业医学美容护肤</h4>
+                    <div class="brand-metas">
+                      <strong class="num">5.4</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="美国奢侈品牌" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2953206" target="_blank" data-spm="d14" asid="2953206">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i2/10000046579433584/TB2OkF_aXXXXXXQXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i1/10000046805972626/TB2kK0_aXXXXXX6XpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>112</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>美国奢侈品牌</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.6</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="l-floor J_Floor" id="floor4">
+        <div class="l-f-title">
+          <div class="l-f-tbox">母婴百货</div>
+        </div>
+        <div class="brands-list-wrap">
+          <ul class="brands-list clearfix" data-spm="b">
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="金装尿裤酷爽来袭" class="link-box" href="http://ju.taobao.com/jusp/zhiniaokuupin/tp.htm?spm=0.0.0.0.dQks4e" target="_blank" data-spm="d1" asid="2777363">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i1/10000047993677795/TB2bkTFaXXXXXamXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i1/10000048182824834/TB20PPCaXXXXXaSXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>1690</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>金装尿裤酷爽来袭</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.4</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="享受健康享受生活" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2778399" target="_blank" data-spm="d2" asid="2778399">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i3/10000048495046835/TB2xbrMaXXXXXa9XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000046839103026/TB2nFlNaXXXXXcRXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>524</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>享受健康享受生活</h4>
+                    <div class="brand-metas">
+                      <strong class="num">3.2</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="百草味中秋节大促" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2804834" target="_blank" data-spm="d3" asid="2804834">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i3/10000047917438099/TB2a6TuaXXXXXXeXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i4/10000047970436914/TB2GQ6oaXXXXXcqXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>5053</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>百草味中秋节大促</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.9</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="大众车主精品团" class="link-box" href="http://ju.taobao.com/jusp/qcyp0820/tp.htm?spm=0.0.0.0.lr9Kc6" target="_blank" data-spm="d4" asid="2827564">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i4/10000047990670184/TB2vznvaXXXXXciXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i2/10000048376123289/TB2fQnzaXXXXXXSXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>337</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>大众车主精品团</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="夏日精致生活" class="link-box" href="http://ju.taobao.com/jusp/delixipintuan/tp.htm?spm=0.0.0.0.bi9RuE" target="_blank" data-spm="d5" asid="2784374">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i1/10000048031627139/TB25irdaXXXXXXmXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i1/10000045776421743/TB2nlZ_XVXXXXXBXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>1517</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>夏日精致生活</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.3</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="迪士尼超级大牌日" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3069217" target="_blank" data-spm="d6" asid="3069217">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i4/10000047509704936/TB2UCy.aXXXXXa.XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i2/10000047282625524/TB2rIvXaXXXXXaNXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>4735</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>迪士尼超级大牌日</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.1</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="5折封顶全场包邮" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2815375" target="_blank" data-spm="d7" asid="2815375">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i1/10000047994145601/TB2c3vEaXXXXXbXXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i4/10000048170762326/TB2sSLPaXXXXXXqXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>582</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>5折封顶全场包邮</h4>
+                    <div class="brand-metas">
+                      <strong class="num">3.1</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="换季收纳清洁风暴" class="link-box" href="http://ju.taobao.com/jusp/baijiahaoshi820/tp.htm?spm=0.0.0.0.2vwQvK" target="_blank" data-spm="d8" asid="2880152">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000047830868740/TB2xfrgaXXXXXX2XpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i1/10000049542351610/TB2J2HhaXXXXXcFXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>1938</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>换季收纳清洁风暴</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.6</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="世界顶级奶粉辅食" class="link-box" href="http://ju.taobao.com/jusp/bangbaoshi/tp.htm?spm=0.0.0.0.PfFNKu" target="_blank" data-spm="d9" asid="2803439">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i4/10000046881689391/TB2Y_d4aXXXXXXgXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i4/10000060049244383/TB2Xz8VaXXXXXbfXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>827</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>世界顶级奶粉辅食</h4>
+                    <div class="brand-metas">
+                      <strong class="num">7.5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="秋衣来袭品牌团" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2761339" target="_blank" data-spm="d10" asid="2761339">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i2/10000048033299176/TB2IYPdaXXXXXcXXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i3/10000047961934571/TB2qGnbaXXXXXb8XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>1203</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>秋衣来袭品牌团</h4>
+                    <div class="brand-metas">
+                      <strong class="num">3.8</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="优贝宜秋装新品团" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2784292" target="_blank" data-spm="d11" asid="2784292">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i3/10000048297890933/TB2sgHvaXXXXXaWXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000048371167472/TB2dDPvaXXXXXbOXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>5715</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>优贝宜秋装新品团</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.9</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="首创海藻护臀理念" class="link-box" href="http://ju.taobao.com/jusp/kaixueyingxin/tp.htm?spm=0.0.0.0.CZPW1M" target="_blank" data-spm="d12" asid="2777285">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i1/10000048062251138/TB2TGLfaXXXXXbiXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i1/10000058746584086/TB26NUGXVXXXXc4XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>2041</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>首创海藻护臀理念</h4>
+                    <div class="brand-metas">
+                      <strong class="num">3.1</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="全场3折大开血" class="link-box" href="http://ju.taobao.com/jusp/cleafe819/tp.htm?spm=0.0.0.0.xVnKVZ" target="_blank" data-spm="d13" asid="2880219">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i2/10000048155335425/TB27SjfaXXXXXa0XpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i2/10000047772410099/TB21t6jaXXXXXaKXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>3935</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>全场3折大开血</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.4</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="中秋钜惠健康有礼" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2898338" target="_blank" data-spm="d14" asid="2898338">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i4/10000048311639992/TB2UnFUaXXXXXaHXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i4/10000059966484232/TB2SFBWaXXXXXahXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：21小时29分</span>
+                    <span class="sold-num">
+                      <em>12020</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>中秋钜惠健康有礼</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.4</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="l-floor J_Floor" id="floor5">
+        <div class="l-f-title">
+          <div class="l-f-tbox">家装家电数码</div>
+        </div>
+        <div class="brands-list-wrap">
+          <ul class="brands-list clearfix" data-spm="b">
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="专业陶瓷创始者" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3046392" target="_blank" data-spm="d1" asid="3046392">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i3/10000047416405141/TB2ILiBaXXXXXaWXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000046986145845/TB2SvyIaXXXXXcFXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>352</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>专业陶瓷创始者</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="无忧家装33天" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2871195" target="_blank" data-spm="d2" asid="2871195">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i3/10000047940876621/TB2elDkaXXXXXXhXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i2/10000047710597952/TB2JhDraXXXXXX7XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>63</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>无忧家装33天</h4>
+                    <div class="brand-metas">
+                      <strong class="num">8.4</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="卡西欧伴你开学" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=3154558" target="_blank" data-spm="d3" asid="3154558">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju4.alicdn.com/bao/uploaded/i3/10000048163897214/TB2C3joaXXXXXcmXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i2/10000048163897189/TB2QyfmaXXXXXX2XpXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>148</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>卡西欧伴你开学</h4>
+                    <div class="brand-metas">
+                      <strong class="num">2.5</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="做最美的自己" class="link-box" href="http://act.ju.taobao.com/market/ju/shopbrand.php" target="_blank" data-spm="d4" asid="3050424">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i2/10000047821094243/TB2u8jjaXXXXXctXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju2.alicdn.com/bao/uploaded/i3/10000048133990674/TB2RGbmaXXXXXaqXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>240</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>做最美的自己</h4>
+                    <div class="brand-metas">
+                      <strong class="num">1.1</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="brand-mid-v1">
+              <div class="brand-status ">
+                <a title="幸福生活原来是真" class="link-box" href="http://ju.taobao.com/tg/brand_items.htm?act_sign_id=2881631" target="_blank" data-spm="d5" asid="2881631">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-img" data-ks-lazyload="http://gju3.alicdn.com/bao/uploaded/i2/10000047828695360/TB22uu7aXXXXXXUXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_300x300Q90.jpg">
+                  <img src="http://a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif" class="brand-logo" data-ks-lazyload="http://gju1.alicdn.com/bao/uploaded/i1/10000047757622586/TB2KAK0aXXXXXcKXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_90x90Q90.jpg">
+
+                  <div class="statis">
+                    <span class="time-left">还剩：1天21小时29分</span>
+                    <span class="sold-num">
+                      <em>96</em>
+                      人已买
+                    </span>
+                  </div>
+                  <div class="brand-bg">
+                    <h4>幸福生活原来是真</h4>
+                    <div class="brand-metas">
+                      <strong class="num">5.3</strong>
+                      <b>折起</b>
+                    </div>
+                    <div class="btn">
+                      <span class="action">马上抢</span>
+                      <s></s>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <!-- tms:659252 -->
+
+            <li class="brands-item">
+              <a href="http://ju.taobao.com/tg/decoration.htm?spm=608.5765497.369177.1" target="_blank">
+                <img class="logo" alt="" src="http://gtms03.alicdn.com/tps/i3/T1cdStFjVgXXbpelTh-460-210.jpg" height="210" width="460">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <ul style="display: block; top: 463px; position: absolute;" id="J_FixedNav" class="fixed-nav">
+      <li class="selected">
+        <a data-spm-anchor-id="608.5847453.0.0" class="anchor" href="#floor1" data-md="jhs.4.5.2?index=1">流行服饰</a>
+      </li>
+      <li class="">
+        <a data-spm-anchor-id="608.5847453.0.0" class="anchor" href="#floor2" data-md="jhs.4.5.2?index=2">运动鞋包</a>
+      </li>
+      <li>
+        <a class="anchor" href="#floor3" data-md="jhs.4.5.2?index=3">美容饰品</a>
+      </li>
+      <li>
+        <a class="anchor" href="#floor4" data-md="jhs.4.5.2?index=4">母婴百货</a>
+      </li>
+      <li>
+        <a class="anchor" href="#floor5" data-md="jhs.4.5.2?index=5">家装家电数码</a>
+      </li>
+      <li class="tomorrow">
+        <a data-spm-anchor-id="608.5847453.0.0" class="anchor" href="#floor6" data-md="jhs.4.5.2?index=6">开售预告</a>
+      </li>
+    </ul>
+  </div>
+</div>
