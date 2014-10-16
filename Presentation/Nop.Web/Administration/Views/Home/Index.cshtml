@@ -97,8 +97,9 @@
                 </table>
             }
         </td>
-        @if (!Model.IsLoggedInAsVendor)
+        @if (!Model.IsLoggedInAsVendor&&false)
         {
+                       
             <td class="rightcol">
                 @Html.Action("NopCommerceNews", "Home")
             </td>
