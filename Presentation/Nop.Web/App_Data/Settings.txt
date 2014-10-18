@@ -1,2 +1,2 @@
-DataProvider: sqlce 
-DataConnectionString: Data Source=|DataDirectory|\Nop.Db.sdf;Persist Security Info=False
+DataProvider: sqlserver
+DataConnectionString: Data Source=.\sql12;Initial Catalog=nop_original;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=sa123

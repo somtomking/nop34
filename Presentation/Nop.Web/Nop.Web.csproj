@@ -2986,7 +2986,6 @@
     <Content Include="Themes\DefaultClean\Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Plugins\bin\" />
     <Folder Include="Themes\SpecialSale\Scripts\" />
   </ItemGroup>
   <ItemGroup>
