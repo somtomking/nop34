@@ -1,0 +1,25 @@
+﻿
+@model Nop.Admin.Models.CommonExpand.RunInfoModel
+@{
+    //page title
+    ViewBag.Title = T("Admin.System.RunInfo").Text;
+}
+<div class="section-header">
+    <div class="title">
+        <img src="@Url.Content("~/Administration/Content/images/ico-system.png")" alt="" />
+        @T("Admin.System.RunInfo")
+    </div>
+</div>
+
+ 
+<table class="adminContent">
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.RAM):
+        </td>
+        <td class="adminData">
+            @Html.DisplayFor(model => model.RAM)
+        </td>
+    </tr>
+     
+</table>
