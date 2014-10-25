@@ -883,6 +883,7 @@
     <Content Include="Content\Roxy_Fileman\lang\de.json" />
     <Content Include="Content\Roxy_Fileman\lang\en.json" />
     <Content Include="Content\Roxy_Fileman\LICENSE.txt" />
+    <Content Include="Content\tinymce\langs\zh_CN.js" />
     <Content Include="Content\tinymce\license.txt" />
     <Content Include="Content\tinymce\plugins\advlist\plugin.min.js" />
     <Content Include="Content\tinymce\plugins\anchor\plugin.min.js" />
