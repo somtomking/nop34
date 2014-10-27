@@ -438,6 +438,10 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\Nop.Core.Expand\Nop.Core.Expand.csproj">
+      <Project>{f8747b44-1306-484b-9a65-a7e9b52d5341}</Project>
+      <Name>Nop.Core.Expand</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Libraries\Nop.Core\Nop.Core.csproj">
       <Project>{6BDA8332-939F-45B7-A25E-7A797260AE59}</Project>
       <Name>Nop.Core</Name>

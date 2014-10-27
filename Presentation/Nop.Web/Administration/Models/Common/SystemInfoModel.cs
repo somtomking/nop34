@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Nop.Web.Framework;
 using Nop.Web.Framework.Mvc;
+using Nop.Core.Expand;
 
 namespace Nop.Admin.Models.Common
 {
@@ -12,7 +13,9 @@ namespace Nop.Admin.Models.Common
             this.ServerVariables = new List<ServerVariableModel>();
             this.LoadedAssemblies = new List<LoadedAssembly>();
         }
-
+        [Expand(ExpandType.New)]
+        [NopResourceDisplayName("Admin.System.SystemInfo.RAM")]
+        public string RAM { get; set; }
         [NopResourceDisplayName("Admin.System.SystemInfo.ASPNETInfo")]
         public string AspNetInfo { get; set; }
 

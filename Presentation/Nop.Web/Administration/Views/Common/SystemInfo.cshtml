@@ -40,6 +40,14 @@
             @Html.DisplayFor(model => model.NopVersion)
         </td>
     </tr>
+  <tr>
+    <td class="adminTitle">
+      @Html.NopLabelFor(model => model.RAM):
+    </td>
+    <td class="adminData">
+      @Html.DisplayFor(model => model.RAM)
+    </td>
+  </tr>
     <tr>
         <td class="adminTitle">
             @Html.NopLabelFor(model => model.OperatingSystem):
