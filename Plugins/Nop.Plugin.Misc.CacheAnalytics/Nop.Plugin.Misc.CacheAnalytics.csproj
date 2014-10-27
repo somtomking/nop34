@@ -113,7 +113,9 @@
     <None Include="Views\Web.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Web.config" />
+    <None Include="Web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\Nop.Core\Nop.Core.csproj">
