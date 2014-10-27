@@ -1,0 +1,8 @@
+﻿Group: Widgets
+FriendlyName: NopWarehouse Customer Counter
+SystemName: Widgets.NWCustomerCounter
+Version: 1.00
+SupportedVersions: 3.40
+Author: Idrees Khan
+DisplayOrder: 0
+FileName: Nop.Plugin.Widgets.NWCustomerCounter.dll

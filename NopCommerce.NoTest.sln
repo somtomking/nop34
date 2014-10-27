@@ -101,6 +101,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugin.Payments.AliPay"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugin.Misc.WebApiServices", "Plugins\Martware.Api\Nop.Plugin.Misc.WebApiServices.csproj", "{58699112-289C-437C-812D-18D1729299B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugin.Widgets.NWCustomerCounter", "Plugins\Nop.Plugin.Widgets.NWCustomerCounter\Nop.Plugin.Widgets.NWCustomerCounter.csproj", "{28EFA810-1F55-47EC-9927-99634DA4E0DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pre", "Pre", "{F96FE3F5-4416-40D6-B732-DD2F6F9A7E7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugin.Misc.CacheAnalytics", "Plugins\Nop.Plugin.Misc.CacheAnalytics\Nop.Plugin.Misc.CacheAnalytics.csproj", "{3889619D-50C5-491F-9789-C58A15D1AFB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugin.Misc.DiscountAdminHelper", "Plugins\Nop.Plugin.Misc.DiscountAdminHelper\Nop.Plugin.Misc.DiscountAdminHelper.csproj", "{BC9180AC-473E-4CB3-8CD3-73557698DDD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -501,6 +509,36 @@ Global
 		{58699112-289C-437C-812D-18D1729299B3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{58699112-289C-437C-812D-18D1729299B3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{58699112-289C-437C-812D-18D1729299B3}.Release|x86.ActiveCfg = Release|Any CPU
+		{28EFA810-1F55-47EC-9927-99634DA4E0DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28EFA810-1F55-47EC-9927-99634DA4E0DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28EFA810-1F55-47EC-9927-99634DA4E0DB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{28EFA810-1F55-47EC-9927-99634DA4E0DB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{28EFA810-1F55-47EC-9927-99634DA4E0DB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{28EFA810-1F55-47EC-9927-99634DA4E0DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28EFA810-1F55-47EC-9927-99634DA4E0DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28EFA810-1F55-47EC-9927-99634DA4E0DB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{28EFA810-1F55-47EC-9927-99634DA4E0DB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{28EFA810-1F55-47EC-9927-99634DA4E0DB}.Release|x86.ActiveCfg = Release|Any CPU
+		{3889619D-50C5-491F-9789-C58A15D1AFB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3889619D-50C5-491F-9789-C58A15D1AFB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3889619D-50C5-491F-9789-C58A15D1AFB8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3889619D-50C5-491F-9789-C58A15D1AFB8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3889619D-50C5-491F-9789-C58A15D1AFB8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3889619D-50C5-491F-9789-C58A15D1AFB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3889619D-50C5-491F-9789-C58A15D1AFB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3889619D-50C5-491F-9789-C58A15D1AFB8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3889619D-50C5-491F-9789-C58A15D1AFB8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3889619D-50C5-491F-9789-C58A15D1AFB8}.Release|x86.ActiveCfg = Release|Any CPU
+		{BC9180AC-473E-4CB3-8CD3-73557698DDD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC9180AC-473E-4CB3-8CD3-73557698DDD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC9180AC-473E-4CB3-8CD3-73557698DDD0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BC9180AC-473E-4CB3-8CD3-73557698DDD0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BC9180AC-473E-4CB3-8CD3-73557698DDD0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BC9180AC-473E-4CB3-8CD3-73557698DDD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC9180AC-473E-4CB3-8CD3-73557698DDD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC9180AC-473E-4CB3-8CD3-73557698DDD0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BC9180AC-473E-4CB3-8CD3-73557698DDD0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BC9180AC-473E-4CB3-8CD3-73557698DDD0}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -549,6 +587,10 @@ Global
 		{F8747B44-1306-484B-9A65-A7E9B52D5341} = {E4ACA93B-D3DE-4557-B069-F1DB42925A4B}
 		{A992C2B2-5D85-4672-8600-1A0AF178C8D8} = {FF57C11A-2E2E-4167-97A8-E1098171134F}
 		{58699112-289C-437C-812D-18D1729299B3} = {7881B112-7843-4542-B1F7-F99553FB9BB7}
+		{28EFA810-1F55-47EC-9927-99634DA4E0DB} = {F96FE3F5-4416-40D6-B732-DD2F6F9A7E7E}
+		{F96FE3F5-4416-40D6-B732-DD2F6F9A7E7E} = {7881B112-7843-4542-B1F7-F99553FB9BB7}
+		{3889619D-50C5-491F-9789-C58A15D1AFB8} = {F96FE3F5-4416-40D6-B732-DD2F6F9A7E7E}
+		{BC9180AC-473E-4CB3-8CD3-73557698DDD0} = {F96FE3F5-4416-40D6-B732-DD2F6F9A7E7E}
 	EndGlobalSection
 	GlobalSection(NDepend) = preSolution
 		Project = ".\NopCommerce.ndproj"
