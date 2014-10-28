@@ -27,4 +27,7 @@ Tax.FixedRate
 Tax.CountryStateZip
 Widgets.GoogleAnalytics
 Widgets.NivoSlider
- 
+Payments.AliPay
+Misc.WebApiServices
+Widgets.NWCustomerCounter
+Misc.CacheAnalytics

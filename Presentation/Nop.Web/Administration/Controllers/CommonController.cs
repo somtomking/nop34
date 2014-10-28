@@ -29,6 +29,7 @@ using Nop.Services.Stores;
 using Nop.Web.Framework.Controllers;
 using Nop.Web.Framework.Kendoui;
 using Nop.Web.Framework.Security;
+using Nop.Core.Expand;
 
 namespace Nop.Admin.Controllers
 {
@@ -61,21 +62,21 @@ namespace Nop.Admin.Controllers
 
         #region Constructors
 
-        public CommonController(IPaymentService paymentService, 
+        public CommonController(IPaymentService paymentService,
             IShippingService shippingService,
-            IShoppingCartService shoppingCartService, 
-            ICurrencyService currencyService, 
+            IShoppingCartService shoppingCartService,
+            ICurrencyService currencyService,
             IMeasureService measureService,
-            ICustomerService customerService, 
-            IUrlRecordService urlRecordService, 
-            IWebHelper webHelper, 
+            ICustomerService customerService,
+            IUrlRecordService urlRecordService,
+            IWebHelper webHelper,
             CurrencySettings currencySettings,
-            MeasureSettings measureSettings, 
+            MeasureSettings measureSettings,
             IDateTimeHelper dateTimeHelper,
-            ILanguageService languageService, 
+            ILanguageService languageService,
             IWorkContext workContext,
             IStoreContext storeContext,
-            IPermissionService permissionService, 
+            IPermissionService permissionService,
             ILocalizationService localizationService,
             ISearchTermService searchTermService,
             IStoreService storeService,
@@ -107,14 +108,16 @@ namespace Nop.Admin.Controllers
         #endregion
 
         #region Methods
-
+        [Expand(ExpandType.Update)]
         public ActionResult SystemInfo()
         {
             if (!_permissionService.Authorize(StandardPermissionProvider.ManageMaintenance))
                 return AccessDeniedView();
 
             var model = new SystemInfoModel();
+            model.RAM = string.Format("{0}MB", Environment.WorkingSet / 1024 / 1024);
             model.NopVersion = NopVersion.CurrentVersion;
+
             try
             {
                 model.OperatingSystem = Environment.OSVersion.VersionString;
@@ -147,7 +150,7 @@ namespace Nop.Admin.Controllers
             {
                 model.LoadedAssemblies.Add(new SystemInfoModel.LoadedAssembly()
                 {
-                    FullName =  assembly.FullName,
+                    FullName = assembly.FullName,
                     //we cannot use Location property in medium trust
                     //Location = assembly.Location
                 });
@@ -321,7 +324,7 @@ namespace Nop.Admin.Controllers
                     model.Add(new SystemWarningModel()
                     {
                         Level = SystemWarningLevel.Warning,
-                        Text = string.Format(_localizationService.GetResource("Admin.System.Warnings.IncompatiblePlugin"), pluginName )
+                        Text = string.Format(_localizationService.GetResource("Admin.System.Warnings.IncompatiblePlugin"), pluginName)
                     });
 
             //performance settings
@@ -387,7 +390,7 @@ namespace Nop.Admin.Controllers
                 var machineKeySection = ConfigurationManager.GetSection("system.web/machineKey") as MachineKeySection;
                 var machineKeySpecified = machineKeySection != null &&
                     !String.IsNullOrEmpty(machineKeySection.DecryptionKey) &&
-                    !machineKeySection.DecryptionKey.StartsWith("AutoGenerate",StringComparison.InvariantCultureIgnoreCase);
+                    !machineKeySection.DecryptionKey.StartsWith("AutoGenerate", StringComparison.InvariantCultureIgnoreCase);
 
                 if (!machineKeySpecified)
                 {
@@ -410,7 +413,7 @@ namespace Nop.Admin.Controllers
             {
                 LogException(exc);
             }
-            
+
             return View(model);
         }
 
@@ -483,7 +486,7 @@ namespace Nop.Admin.Controllers
                         continue;
 
                     var info = new FileInfo(fullPath);
-                    if ((!startDateValue.HasValue || startDateValue.Value < info.CreationTimeUtc)&&
+                    if ((!startDateValue.HasValue || startDateValue.Value < info.CreationTimeUtc) &&
                         (!endDateValue.HasValue || info.CreationTimeUtc < endDateValue.Value))
                     {
                         System.IO.File.Delete(fullPath);
