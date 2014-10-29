@@ -23,16 +23,6 @@ namespace Nop.Plugin.Misc.WebApiServices
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApiWithVersionAndAction",
-                routeTemplate: "api/v{version}/{controller}/{action}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-
-
-
-
-
-            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
