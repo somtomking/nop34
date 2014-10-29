@@ -1,12 +1,14 @@
 ﻿using Autofac;
 using Autofac.Integration.WebApi;
 using Nop.Core.Infrastructure;
-using Nop.Plugin.Misc.WebApiServices.App_Start;
+ 
+using Nop.Plugin.Misc.WebApiServices.Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
 using System.Web.Mvc;
 
 namespace Nop.Plugin.Misc.WebApiServices
@@ -49,8 +51,11 @@ namespace Nop.Plugin.Misc.WebApiServices
             config.DependencyResolver = resolver;
 
 
-            
 
+            //exception logger 
+            config.Services.Add(typeof(IExceptionLogger), new SimpleExceptionLogger());
+            //exception handler
+            config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
         
 
 

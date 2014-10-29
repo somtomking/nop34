@@ -128,6 +128,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\MiscWebApiServicesController.cs" />
+    <Compile Include="Logger\CustomExceptionLogger.cs" />
+    <Compile Include="Logger\ErrorResult.cs" />
+    <Compile Include="Logger\GlobalExceptionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteProvider.cs" />
     <Compile Include="WebServicePlugin.cs" />
@@ -181,6 +185,9 @@
       <Name>Nop.Web.Framework</Name>
       <Private>False</Private>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MiscWebApiServices\Configure.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

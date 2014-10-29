@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Nop.Plugin.Misc.WebApiServices.App_Start
+namespace Nop.Plugin.Misc.WebApiServices
 {
     public class FilterConfig
     {
