@@ -1,4 +1,4 @@
-Group: ExternalAuth methods
+﻿Group: ExternalAuth methods
 FriendlyName: OpenID authentication
 SystemName: ExternalAuth.OpenId
 Version: 1.24
