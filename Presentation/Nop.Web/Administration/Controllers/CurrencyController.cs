@@ -17,7 +17,7 @@ using Nop.Web.Framework.Kendoui;
 namespace Nop.Admin.Controllers
 {
     public partial class CurrencyController :  BaseAdminController
-    {
+    {  
         #region Fields
 
         private readonly ICurrencyService _currencyService;
