@@ -371,6 +371,7 @@
     <Content Include="App_Data\InstalledPlugins.txt" />
     <Content Include="App_Data\Install\add%281.0.0%29\02.创建城市和地区表%282014-10-13%29.sql" />
     <Content Include="App_Data\Install\add%281.0.0%29\01.初始化中国的城市和地区表%282014-10-13%29.sql" />
+    <Content Include="App_Data\Install\add%281.0.0%29\03.地址表添加城市及地区的关联字段.sql" />
     <Content Include="App_Data\Install\create_required_data.sql" />
     <Content Include="App_Data\Install\create_sample_data.sql" />
     <Content Include="App_Data\Localization\Installation\installation.ar.xml" />
