@@ -13,6 +13,7 @@ namespace Nop.Plugin.Misc.DiscountAdminHelper.Services
     {
         public void Register(ContainerBuilder builder, ITypeFinder typeFinder)
         {
+           
             builder.RegisterType<DiscountServiceExtension>()
                 .As<IDiscountServiceExtension>()
                 .InstancePerHttpRequest();
