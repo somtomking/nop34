@@ -7,7 +7,7 @@ using Nop.Core.Expand;
 namespace Nop.Core.Domain.Directory
 {
     [Expand(ExpandType.New)]
-    public partial class District : BaseEntity
+    public partial class Area : BaseEntity
     {
         public int CityId { get; set; }
         public string Name { get; set; }

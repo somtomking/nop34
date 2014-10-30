@@ -261,7 +261,7 @@ namespace Nop.Plugin.Misc.WebServices
                 a.Company = company;
                 a.Address1 = address1;
                 a.Address2 = address2;
-                a.City = city;
+                a.InputCity = city;
                 StateProvince stateProvince = null;
                 if (!String.IsNullOrEmpty(stateProvinceAbbreviation))
                     stateProvince = _stateProvinceService.GetStateProvinceByAbbreviation(stateProvinceAbbreviation);
@@ -299,7 +299,7 @@ namespace Nop.Plugin.Misc.WebServices
                 a.Company = company;
                 a.Address1 = address1;
                 a.Address2 = address2;
-                a.City = city;
+                a.InputCity = city;
                 StateProvince stateProvince = null;
                 if (!String.IsNullOrEmpty(stateProvinceAbbreviation))
                     stateProvince = _stateProvinceService.GetStateProvinceByAbbreviation(stateProvinceAbbreviation);

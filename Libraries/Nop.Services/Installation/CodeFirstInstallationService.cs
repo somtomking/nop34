@@ -3962,7 +3962,7 @@ namespace Nop.Services.Installation
                 Company = "Nop Solutions",
                 Address1 = "21 West 52nd Street",
                 Address2 = "",
-                City = "New York",
+                InputCity = "New York",
                 StateProvince = _stateProvinceRepository.Table.FirstOrDefault(sp => sp.Name == "New York"),
                 Country = _countryRepository.Table.FirstOrDefault(c => c.ThreeLetterIsoCode == "USA"),
                 ZipPostalCode = "10021",

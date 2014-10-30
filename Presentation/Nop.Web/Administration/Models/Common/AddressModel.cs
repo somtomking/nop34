@@ -4,6 +4,7 @@ using FluentValidation.Attributes;
 using Nop.Admin.Validators.Common;
 using Nop.Web.Framework;
 using Nop.Web.Framework.Mvc;
+using Nop.Core.Expand;
 
 namespace Nop.Admin.Models.Common
 {
@@ -48,7 +49,20 @@ namespace Nop.Admin.Models.Common
 
         [NopResourceDisplayName("Admin.Address.Fields.City")]
         [AllowHtml]
-        public string City { get; set; }
+        public string InputCity { get; set; }
+        [Expand(ExpandType.New)]
+        [NopResourceDisplayName("Admin.Address.Fields.City")]
+        public int? CityId { get; set; }
+        [NopResourceDisplayName("Admin.Address.Fields.City")]
+        [Expand(ExpandType.New)]
+        [AllowHtml]
+        public string CityName { get; set; }
+        [NopResourceDisplayName("Admin.Address.Fields.Area")]
+        public int? AreaId { get; set; }
+        [Expand(ExpandType.New)]
+        [NopResourceDisplayName("Admin.Address.Fields.Area")]
+        [AllowHtml]
+        public string AreaName { get; set; }
 
         [NopResourceDisplayName("Admin.Address.Fields.Address1")]
         [AllowHtml]
@@ -92,6 +106,8 @@ namespace Nop.Admin.Models.Common
         public bool StateProvinceEnabled { get; set; }
         public bool CityEnabled { get; set; }
         public bool CityRequired { get; set; }
+        [Expand(ExpandType.New)]
+        public bool AllCityInput { get; set; }
         public bool StreetAddressEnabled { get; set; }
         public bool StreetAddressRequired { get; set; }
         public bool StreetAddress2Enabled { get; set; }
@@ -102,5 +118,6 @@ namespace Nop.Admin.Models.Common
         public bool PhoneRequired { get; set; }
         public bool FaxEnabled { get; set; }
         public bool FaxRequired { get; set; }
+
     }
 }

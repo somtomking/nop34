@@ -880,7 +880,7 @@ namespace Nop.Web.Controllers
                             (int?)customer.GetAttribute<int>(SystemCustomerAttributeNames.CountryId) : null,
                         StateProvinceId = customer.GetAttribute<int>(SystemCustomerAttributeNames.StateProvinceId) > 0 ?
                             (int?)customer.GetAttribute<int>(SystemCustomerAttributeNames.StateProvinceId) : null,
-                        City = customer.GetAttribute<string>(SystemCustomerAttributeNames.City),
+                        InputCity = customer.GetAttribute<string>(SystemCustomerAttributeNames.City),
                         Address1 = customer.GetAttribute<string>(SystemCustomerAttributeNames.StreetAddress),
                         Address2 = customer.GetAttribute<string>(SystemCustomerAttributeNames.StreetAddress2),
                         ZipPostalCode = customer.GetAttribute<string>(SystemCustomerAttributeNames.ZipPostalCode),

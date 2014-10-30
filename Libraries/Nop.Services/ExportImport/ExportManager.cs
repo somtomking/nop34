@@ -1230,7 +1230,7 @@ namespace Nop.Services.ExportImport
                         worksheet.Cells[row, col].Value = order.BillingAddress != null && order.BillingAddress.StateProvince != null ? order.BillingAddress.StateProvince.Name : "";
                         col++;
                         
-                        worksheet.Cells[row, col].Value = order.BillingAddress != null ? order.BillingAddress.City : "";
+                        worksheet.Cells[row, col].Value = order.BillingAddress != null ? order.BillingAddress.InputCity : "";
                         col++;
                         
                         worksheet.Cells[row, col].Value = order.BillingAddress != null ? order.BillingAddress.Address1 : "";
@@ -1267,7 +1267,7 @@ namespace Nop.Services.ExportImport
                         worksheet.Cells[row, col].Value = order.ShippingAddress != null && order.ShippingAddress.StateProvince != null ? order.ShippingAddress.StateProvince.Name : "";
                         col++;
                         
-                        worksheet.Cells[row, col].Value = order.ShippingAddress != null ? order.ShippingAddress.City : "";
+                        worksheet.Cells[row, col].Value = order.ShippingAddress != null ? order.ShippingAddress.InputCity : "";
                         col++;
                         
                         worksheet.Cells[row, col].Value = order.ShippingAddress != null ? order.ShippingAddress.Address1 : "";

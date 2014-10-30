@@ -97,7 +97,7 @@ namespace Nop.Web.Extensions
                 model.StateProvinceName = address.StateProvince != null 
                     ? address.StateProvince.GetLocalized(x => x.Name)
                     : null;
-                model.City = address.City;
+                model.City = address.InputCity;
                 model.Address1 = address.Address1;
                 model.Address2 = address.Address2;
                 model.ZipPostalCode = address.ZipPostalCode;
@@ -234,7 +234,7 @@ namespace Nop.Web.Extensions
             destination.Company = model.Company;
             destination.CountryId = model.CountryId;
             destination.StateProvinceId = model.StateProvinceId;
-            destination.City = model.City;
+            destination.InputCity = model.City;
             destination.Address1 = model.Address1;
             destination.Address2 = model.Address2;
             destination.ZipPostalCode = model.ZipPostalCode;

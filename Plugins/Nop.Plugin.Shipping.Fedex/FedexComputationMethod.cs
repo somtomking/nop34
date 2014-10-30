@@ -208,7 +208,7 @@ namespace Nop.Plugin.Shipping.Fedex
                 request.RequestedShipment.Recipient.Address.ResidentialSpecified = true;
             }
             request.RequestedShipment.Recipient.Address.StreetLines = new string[1] { getShippingOptionRequest.ShippingAddress.Address1 };
-            request.RequestedShipment.Recipient.Address.City = getShippingOptionRequest.ShippingAddress.City;
+            request.RequestedShipment.Recipient.Address.City = getShippingOptionRequest.ShippingAddress.InputCity;
             if (getShippingOptionRequest.ShippingAddress.StateProvince != null &&
                 IncludeStateProvinceCode(getShippingOptionRequest.ShippingAddress.Country.TwoLetterIsoCode))
             {

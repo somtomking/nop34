@@ -77,5 +77,7 @@ namespace Nop.Core.Domain.Common
         /// Gets or sets a value indicating whether 'Fax number' is required
         /// </summary>
         public bool FaxRequired { get; set; }
+        [Nop.Core.Expand.Expand(Expand.ExpandType.New, "允许手动输入城市信息")]
+        public bool AllowInputCity { get; set; }
     }
 }

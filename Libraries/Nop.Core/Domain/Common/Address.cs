@@ -1,5 +1,6 @@
 ﻿using System;
 using Nop.Core.Domain.Directory;
+using Nop.Core.Expand;
 
 namespace Nop.Core.Domain.Common
 {
@@ -34,11 +35,17 @@ namespace Nop.Core.Domain.Common
         /// Gets or sets the state/province identifier
         /// </summary>
         public int? StateProvinceId { get; set; }
-        
+        [Expand(ExpandType.New)]
+        public int? CityId { get; set; }
+        [Expand(ExpandType.New)]
+        public int? AreaId { get; set; }
+
+
+
         /// <summary>
         /// Gets or sets the city
         /// </summary>
-        public string City { get; set; }
+        public string InputCity { get; set; }
 
         /// <summary>
         /// Gets or sets the address 1
@@ -69,12 +76,22 @@ namespace Nop.Core.Domain.Common
         /// Gets or sets the date and time of instance creation
         /// </summary>
         public DateTime CreatedOnUtc { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the country
         /// </summary>
         public virtual Country Country { get; set; }
 
+        /// <summary>
+        /// 城市
+        /// </summary>
+        [Expand(ExpandType.New)]
+        public virtual City City { get; set; }
+        /// <summary>
+        /// 地区
+        /// </summary>
+        [Expand(ExpandType.New)]
+        public virtual Area Area { get; set; }
         /// <summary>
         /// Gets or sets the state/province
         /// </summary>
@@ -93,7 +110,7 @@ namespace Nop.Core.Domain.Common
                 CountryId = this.CountryId,
                 StateProvince = this.StateProvince,
                 StateProvinceId = this.StateProvinceId,
-                City = this.City,
+                InputCity = this.InputCity,
                 Address1 = this.Address1,
                 Address2 = this.Address2,
                 ZipPostalCode = this.ZipPostalCode,

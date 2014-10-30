@@ -246,7 +246,7 @@ namespace Nop.Services.Common
 
             if (_addressSettings.CityEnabled &&
                 _addressSettings.CityRequired &&
-                String.IsNullOrWhiteSpace(address.City))
+                String.IsNullOrWhiteSpace(address.InputCity))
                 return false;
 
             if (_addressSettings.PhoneEnabled &&

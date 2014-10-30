@@ -36,10 +36,10 @@ namespace Nop.Admin.Validators.Common
                 .NotEqual(0)
                 .WithMessage(localizationService.GetResource("Admin.Address.Fields.Country.Required"))
                 .When(x => x.CountryEnabled);
-            RuleFor(x => x.City)
+            RuleFor(x => x.InputCity)
                 .NotEmpty()
                 .WithMessage(localizationService.GetResource("Admin.Address.Fields.City.Required"))
-                .When(x => x.CityEnabled && x.CityRequired);
+                .When(x => x.CityEnabled && x.CityRequired && x.AllCityInput);
             RuleFor(x => x.Address1)
                 .NotEmpty()
                 .WithMessage(localizationService.GetResource("Admin.Address.Fields.Address1.Required"))

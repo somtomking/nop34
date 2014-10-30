@@ -476,7 +476,7 @@ namespace Nop.Admin.Controllers
                     model.ShippingAddress.FaxEnabled = _addressSettings.FaxEnabled;
                     model.ShippingAddress.FaxRequired = _addressSettings.FaxRequired;
 
-                    model.ShippingAddressGoogleMapsUrl = string.Format("http://maps.google.com/maps?f=q&hl=en&ie=UTF8&oe=UTF8&geocode=&q={0}", Server.UrlEncode(order.ShippingAddress.Address1 + " " + order.ShippingAddress.ZipPostalCode + " " + order.ShippingAddress.City + " " + (order.ShippingAddress.Country != null ? order.ShippingAddress.Country.Name : "")));
+                    model.ShippingAddressGoogleMapsUrl = string.Format("http://maps.google.com/maps?f=q&hl=en&ie=UTF8&oe=UTF8&geocode=&q={0}", Server.UrlEncode(order.ShippingAddress.Address1 + " " + order.ShippingAddress.ZipPostalCode + " " + order.ShippingAddress.InputCity + " " + (order.ShippingAddress.Country != null ? order.ShippingAddress.Country.Name : "")));
                 }
                 model.ShippingMethod = order.ShippingMethod;
 

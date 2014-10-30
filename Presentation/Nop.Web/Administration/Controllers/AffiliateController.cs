@@ -102,7 +102,7 @@ namespace Nop.Admin.Controllers
                 model.Address.PhoneEnabled = true;
                 model.Address.PhoneRequired = true;
                 model.Address.FaxEnabled = true;
-
+                model.Address.AllCityInput = true;
                 //address
                 model.Address.AvailableCountries.Add(new SelectListItem() { Text = _localizationService.GetResource("Admin.Address.SelectCountry"), Value = "0" });
                 foreach (var c in _countryService.GetAllCountries(true))

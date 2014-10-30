@@ -92,7 +92,7 @@ namespace Nop.Services.Shipping
             if (shippingStateId > 0)
                 query = query.Where(s => s.Order.ShippingAddress.StateProvinceId == shippingStateId);
             if (!String.IsNullOrWhiteSpace(shippingCity))
-                query = query.Where(s => s.Order.ShippingAddress.City.Contains(shippingCity));
+                query = query.Where(s => s.Order.ShippingAddress.InputCity.Contains(shippingCity));
             if (createdFromUtc.HasValue)
                 query = query.Where(s => createdFromUtc.Value <= s.CreatedOnUtc);
             if (createdToUtc.HasValue)

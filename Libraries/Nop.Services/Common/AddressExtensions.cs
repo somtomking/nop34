@@ -38,7 +38,7 @@ namespace Nop.Services.Common
                 ((String.IsNullOrEmpty(a.Company) && String.IsNullOrEmpty(company)) || a.Company == company) &&
                 ((String.IsNullOrEmpty(a.Address1) && String.IsNullOrEmpty(address1)) || a.Address1 == address1) &&
                 ((String.IsNullOrEmpty(a.Address2) && String.IsNullOrEmpty(address2)) || a.Address2 == address2) &&
-                ((String.IsNullOrEmpty(a.City) && String.IsNullOrEmpty(city)) || a.City == city) &&
+                ((String.IsNullOrEmpty(a.InputCity) && String.IsNullOrEmpty(city)) || a.InputCity == city) &&
                 ((a.StateProvinceId.IsNullOrDefault() && stateProvinceId.IsNullOrDefault()) || a.StateProvinceId == stateProvinceId) &&
                 ((String.IsNullOrEmpty(a.ZipPostalCode) && String.IsNullOrEmpty(zipPostalCode)) || a.ZipPostalCode == zipPostalCode) &&
                 ((a.CountryId.IsNullOrDefault() && countryId.IsNullOrDefault()) || a.CountryId == countryId));

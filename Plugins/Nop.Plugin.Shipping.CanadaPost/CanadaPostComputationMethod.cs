@@ -305,7 +305,7 @@ namespace Nop.Plugin.Shipping.CanadaPost
                 profile.MerchantId = _canadaPostSettings.CustomerId;
 
                 var destination = new Destination();
-                destination.City = getShippingOptionRequest.ShippingAddress.City;
+                destination.City = getShippingOptionRequest.ShippingAddress.InputCity;
                 destination.StateOrProvince = getShippingOptionRequest.ShippingAddress.StateProvince.Abbreviation;
                 destination.Country = getShippingOptionRequest.ShippingAddress.Country.TwoLetterIsoCode;
                 destination.PostalCode = getShippingOptionRequest.ShippingAddress.ZipPostalCode;

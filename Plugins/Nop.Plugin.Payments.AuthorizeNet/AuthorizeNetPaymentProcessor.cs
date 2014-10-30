@@ -156,7 +156,7 @@ namespace Nop.Plugin.Payments.AuthorizeNet
             if (!string.IsNullOrEmpty(customer.BillingAddress.Company))
                 form.Add("x_company", customer.BillingAddress.Company);
             form.Add("x_address", customer.BillingAddress.Address1);
-            form.Add("x_city", customer.BillingAddress.City);
+            form.Add("x_city", customer.BillingAddress.InputCity);
             if (customer.BillingAddress.StateProvince != null)
                 form.Add("x_state", customer.BillingAddress.StateProvince.Abbreviation);
             form.Add("x_zip", customer.BillingAddress.ZipPostalCode);
@@ -466,7 +466,7 @@ namespace Nop.Plugin.Payments.AuthorizeNet
                 subscription.billTo.firstName = customer.BillingAddress.FirstName;
                 subscription.billTo.lastName = customer.BillingAddress.LastName;
                 subscription.billTo.address = customer.BillingAddress.Address1 + " " + customer.BillingAddress.Address2;
-                subscription.billTo.city = customer.BillingAddress.City;
+                subscription.billTo.city = customer.BillingAddress.InputCity;
                 if (customer.BillingAddress.StateProvince != null)
                 {
                     subscription.billTo.state = customer.BillingAddress.StateProvince.Abbreviation;
@@ -479,7 +479,7 @@ namespace Nop.Plugin.Payments.AuthorizeNet
                     subscription.shipTo.firstName = customer.ShippingAddress.FirstName;
                     subscription.shipTo.lastName = customer.ShippingAddress.LastName;
                     subscription.shipTo.address = customer.ShippingAddress.Address1 + " " + customer.ShippingAddress.Address2;
-                    subscription.shipTo.city = customer.ShippingAddress.City;
+                    subscription.shipTo.city = customer.ShippingAddress.InputCity;
                     if (customer.ShippingAddress.StateProvince != null)
                     {
                         subscription.shipTo.state = customer.ShippingAddress.StateProvince.Abbreviation;

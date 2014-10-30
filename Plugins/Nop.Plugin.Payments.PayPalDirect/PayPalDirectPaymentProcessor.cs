@@ -152,7 +152,7 @@ namespace Nop.Plugin.Payments.PayPalDirect
             details.CreditCard.CardOwner.Address.CountrySpecified = true;
             details.CreditCard.CardOwner.Address.Street1 = customer.BillingAddress.Address1;
             details.CreditCard.CardOwner.Address.Street2 = customer.BillingAddress.Address2;
-            details.CreditCard.CardOwner.Address.CityName = customer.BillingAddress.City;
+            details.CreditCard.CardOwner.Address.CityName = customer.BillingAddress.InputCity;
             if (customer.BillingAddress.StateProvince != null)
                 details.CreditCard.CardOwner.Address.StateOrProvince = customer.BillingAddress.StateProvince.Abbreviation;
             else
@@ -223,7 +223,7 @@ namespace Nop.Plugin.Payments.PayPalDirect
                     var shippingAddress = new AddressType();
                     shippingAddress.Name = customer.ShippingAddress.FirstName + " " + customer.ShippingAddress.LastName;
                     shippingAddress.Street1 = customer.ShippingAddress.Address1;
-                    shippingAddress.CityName = customer.ShippingAddress.City;
+                    shippingAddress.CityName = customer.ShippingAddress.InputCity;
                     shippingAddress.StateOrProvince = customer.ShippingAddress.StateProvince.Abbreviation;
                     shippingAddress.PostalCode = customer.ShippingAddress.ZipPostalCode;
                     shippingAddress.Country = (CountryCodeType)Enum.Parse(typeof(CountryCodeType), customer.ShippingAddress.Country.TwoLetterIsoCode, true);
@@ -543,7 +543,7 @@ namespace Nop.Plugin.Payments.PayPalDirect
             details.CreditCard.CardOwner.Address.CountrySpecified = true;
             details.CreditCard.CardOwner.Address.Street1 = customer.BillingAddress.Address1;
             details.CreditCard.CardOwner.Address.Street2 = customer.BillingAddress.Address2;
-            details.CreditCard.CardOwner.Address.CityName = customer.BillingAddress.City;
+            details.CreditCard.CardOwner.Address.CityName = customer.BillingAddress.InputCity;
             if (customer.BillingAddress.StateProvince != null)
                 details.CreditCard.CardOwner.Address.StateOrProvince = customer.BillingAddress.StateProvince.Abbreviation;
             else

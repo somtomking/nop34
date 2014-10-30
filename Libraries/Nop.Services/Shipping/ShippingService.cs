@@ -692,7 +692,7 @@ namespace Nop.Services.Shipping
                         request.CountryFrom = originAddress.Country;
                         request.StateProvinceFrom = originAddress.StateProvince;
                         request.ZipPostalCodeFrom = originAddress.ZipPostalCode;
-                        request.CityFrom = originAddress.City;
+                        request.CityFrom = originAddress.InputCity;
                         request.AddressFrom = originAddress.Address1;
                     }
 
