@@ -193,7 +193,7 @@ namespace Nop.Web
             {
                 //admin area
 
-
+                 
                 //always set culture to 'en-US'
                 //we set culture of admin area to 'en-US' because current implementation of Telerik grid 
                 //doesn't work well in other cultures
