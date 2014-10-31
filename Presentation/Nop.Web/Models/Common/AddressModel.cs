@@ -14,6 +14,8 @@ namespace Nop.Web.Models.Common
         {
             AvailableCountries = new List<SelectListItem>();
             AvailableStates = new List<SelectListItem>();
+            AvailableCities = new List<SelectListItem>();
+            AvailableAreas = new List<SelectListItem>();
         }
 
         [NopResourceDisplayName("Address.Fields.FirstName")]
@@ -95,5 +97,7 @@ namespace Nop.Web.Models.Common
 
         public IList<SelectListItem> AvailableCountries { get; set; }
         public IList<SelectListItem> AvailableStates { get; set; }
+        public IList<SelectListItem> AvailableCities { get; set; }
+        public IList<SelectListItem> AvailableAreas{ get; set; }
     }
 }

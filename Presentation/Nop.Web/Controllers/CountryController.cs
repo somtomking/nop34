@@ -6,6 +6,8 @@ using Nop.Core.Caching;
 using Nop.Services.Directory;
 using Nop.Services.Localization;
 using Nop.Web.Infrastructure.Cache;
+using System.Collections.Generic;
+using Nop.Core.Domain.Directory;
 
 namespace Nop.Web.Controllers
 {
@@ -64,7 +66,48 @@ namespace Nop.Web.Controllers
             
             return Json(cacheModel, JsonRequestBehavior.AllowGet);
         }
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult GetCitiesByStateProvinceId(string stateProvinceId,
+            bool? addEmptyStateIfRequired, bool? addAsterisk)
+        {
+            //permission validation is not required here
 
+
+            // This action method gets called via an ajax request
+            if (String.IsNullOrEmpty(stateProvinceId))
+                throw new ArgumentNullException("stateProvinceId");
+
+            var province = _stateProvinceService.GetStateProvinceById(Convert.ToInt32(stateProvinceId));
+            var cities = province != null ? _stateProvinceService.GetCitiesByStateProvinceId(province.Id, true).ToList() : new List<City>();
+            var result = (from s in cities
+                          select new { id = s.Id, name = s.Name }).ToList();
+            if (addEmptyStateIfRequired.HasValue && addEmptyStateIfRequired.Value && result.Count == 0)
+                result.Insert(0, new { id = 0, name = _localizationService.GetResource("Admin.Address.OtherNonUS") });
+            if (addAsterisk.HasValue && addAsterisk.Value)
+                result.Insert(0, new { id = 0, name = "*" });
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult GetAreaCityId(string cityId,
+            bool? addEmptyStateIfRequired, bool? addAsterisk)
+        {
+
+
+            // This action method gets called via an ajax request
+            if (String.IsNullOrEmpty(cityId))
+                throw new ArgumentNullException("cityId");
+
+            var city = _stateProvinceService.GetCityById(Convert.ToInt32(cityId));
+            var areas = city != null ? _stateProvinceService.GetAreasByCityId(city.Id, true).ToList() : new List<Area>();
+            var result = (from s in areas
+                          select new { id = s.Id, name = s.Name }).ToList();
+            if (addEmptyStateIfRequired.HasValue && addEmptyStateIfRequired.Value && result.Count == 0)
+                result.Insert(0, new { id = 0, name = _localizationService.GetResource("Admin.Address.OtherNonUS") });
+            if (addAsterisk.HasValue && addAsterisk.Value)
+                result.Insert(0, new { id = 0, name = "*" });
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
         #endregion
     }
 }

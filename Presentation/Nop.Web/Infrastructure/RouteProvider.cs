@@ -477,6 +477,14 @@ namespace Nop.Web.Infrastructure
                             "country/getstatesbycountryid/",
                             new { controller = "Country", action = "GetStatesByCountryId" },
                             new[] { "Nop.Web.Controllers" });
+            routes.MapRoute("GetCitiesByStateProvinceId",
+                        "country/getcitiesbystateProvinceId/",
+                        new { controller = "Country", action = "GetCitiesByStateProvinceId" },
+                        new[] { "Nop.Web.Controllers" });
+            routes.MapRoute("GetAreaCityId",
+                        "country/GetAreaCityId/",
+                        new { controller = "Country", action = "GetAreaCityId" },
+                        new[] { "Nop.Web.Controllers" });
 
             //EU Cookie law accept button handler (AJAX link)
             routes.MapRoute("EuCookieLawAccept",

@@ -34,7 +34,7 @@
                 success: function (data) {
                     ddlCities.html('');
                     $.each(data, function (id, option) {
-                        ddlStates.append($('<option></option>').val(option.id).html(option.name));
+                      ddlCities.append($('<option></option>').val(option.id).html(option.name));
                     });
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
@@ -53,7 +53,7 @@
                 success: function (data) {
                     ddlAreas.html('');
                     $.each(data, function (id, option) {
-                        ddlStates.append($('<option></option>').val(option.id).html(option.name));
+                      ddlAreas.append($('<option></option>').val(option.id).html(option.name));
                     });
                 },
                 error: function (xhr, ajaxOptions, thrownError) {

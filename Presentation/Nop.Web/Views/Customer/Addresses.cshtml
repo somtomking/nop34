@@ -69,7 +69,7 @@
                             var cityStateZip = "";
                             if (address.CityEnabled)
                             {
-                                cityStateZip = address.City;
+                              cityStateZip = string.IsNullOrEmpty(address.InputCity)?address.CityName+","+address.AreaName:address.InputCity;
                                 if (address.StateProvinceEnabled || address.ZipPostalCodeEnabled)
                                 {
                                     cityStateZip += ",";
