@@ -55,10 +55,12 @@ namespace Nop.Web.Models.Common
 
         [NopResourceDisplayName("Address.Fields.City")]
         public int? CityId { get; set; }
+        [NopResourceDisplayName("Address.Fields.City")]
         public string CityName { get; set; }
 
         [NopResourceDisplayName("Address.Fields.Area")]
         public int? AreaId { get; set; }
+        [NopResourceDisplayName("Address.Fields.Area")]
         public string AreaName { get; set; }
 
         public bool StreetAddressEnabled { get; set; }

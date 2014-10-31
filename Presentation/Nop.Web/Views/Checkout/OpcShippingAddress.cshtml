@@ -19,9 +19,17 @@
                             {
                                 addressLine += ", " + address.Address1;
                             }
-                            if (address.CityEnabled && !String.IsNullOrEmpty(address.City))
+                            if (address.CityEnabled )
                             {
-                                addressLine += ", " + address.City;
+                                if (string.IsNullOrEmpty(address.InputCity))
+                                {
+                                    addressLine += ", " + address.InputCity;
+                                }
+                                else
+                                {
+                                    addressLine += ", " + address.CityName+", "+address.AreaName;
+                                }
+                              
                             }
                             if (address.StateProvinceEnabled && !String.IsNullOrEmpty(address.StateProvinceName))
                             {

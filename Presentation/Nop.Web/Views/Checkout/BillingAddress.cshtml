@@ -70,7 +70,7 @@
                                         <li class="city-state-zip">
                                             @if (item.CityEnabled)
                                             {
-                                                @item.City
+                                                @( string.IsNullOrEmpty(item.InputCity) ? string.Format("{0},{1}", item.CityName, item.AreaName) : item.InputCity)
                                             }
                                             @if (item.CityEnabled && (item.StateProvinceEnabled || item.ZipPostalCodeEnabled))
                                             {
@@ -113,11 +113,11 @@
                 <div class="enter-address">
                     <div class="enter-address-body">
                         @{
-                            var dataDictAddress = new ViewDataDictionary();
-                            //Merge ModelState (required for validation)
-                            dataDictAddress.ModelState.Merge(ViewData.ModelState);
-                            dataDictAddress.TemplateInfo.HtmlFieldPrefix = "NewAddress";
-                            @Html.Partial("_CreateOrUpdateAddress", Model.NewAddress, dataDictAddress)
+                    var dataDictAddress = new ViewDataDictionary();
+                    //Merge ModelState (required for validation)
+                    dataDictAddress.ModelState.Merge(ViewData.ModelState);
+                    dataDictAddress.TemplateInfo.HtmlFieldPrefix = "NewAddress";
+                    @Html.Partial("_CreateOrUpdateAddress", Model.NewAddress, dataDictAddress)
                         }
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                 <input type="submit" name="nextstep" value="@T("Checkout.NextButton")" class="button-1 new-address-next-step-button" />
             </div>
         }
-        
+
         <div class="section order-summary-body">
             <div class="title">
                 <strong>@T("Checkout.OrderSummary")</strong>
