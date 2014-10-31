@@ -103,6 +103,10 @@ namespace Nop.Web.Extensions
                 model.ZipPostalCode = address.ZipPostalCode;
                 model.PhoneNumber = address.PhoneNumber;
                 model.FaxNumber = address.FaxNumber;
+                model.CityId = address.CityId;
+                model.AreaId = address.AreaId;
+                model.CityName = address.City == null ? string.Empty : address.City.Name;
+                model.AreaName = address.Area == null ? string.Empty : address.Area.Name;
             }
 
             if (address == null && prePopulateWithCustomerFields)
@@ -240,6 +244,8 @@ namespace Nop.Web.Extensions
             destination.ZipPostalCode = model.ZipPostalCode;
             destination.PhoneNumber = model.PhoneNumber;
             destination.FaxNumber = model.FaxNumber;
+            destination.CityId = model.CityId;
+            destination.AreaId = model.AreaId;
 
             return destination;
         }
