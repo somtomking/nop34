@@ -1,2 +1,2 @@
 DataProvider: sqlserver
-DataConnectionString: Data Source=.\sql12;Initial Catalog=nop_original;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=sa123
+DataConnectionString: Data Source=(LocalDB)\v11.0;AttachDbFilename=E:\Code.Git\Nop34\Presentation\Nop.Web\App_Data\nop_original.mdf;Integrated Security=True
