@@ -87,7 +87,7 @@ namespace Nop.Admin.Models.Customers
         public bool CityEnabled { get; set; }
         [NopResourceDisplayName("Admin.Customers.Customers.Fields.City")]
         [AllowHtml]
-        public string City { get; set; }
+        public string InputCity { get; set; }
 
         public bool CountryEnabled { get; set; }
         [NopResourceDisplayName("Admin.Customers.Customers.Fields.Country")]

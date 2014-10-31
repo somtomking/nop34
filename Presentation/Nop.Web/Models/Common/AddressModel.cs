@@ -51,7 +51,15 @@ namespace Nop.Web.Models.Common
         public bool CityRequired { get; set; }
         [NopResourceDisplayName("Address.Fields.City")]
         [AllowHtml]
-        public string City { get; set; }
+        public string InputCity { get; set; }
+
+        [NopResourceDisplayName("Address.Fields.City")]
+        public int? CityId { get; set; }
+        public string CityName { get; set; }
+
+        [NopResourceDisplayName("Address.Fields.Area")]
+        public int? AreaId { get; set; }
+        public string AreaName { get; set; }
 
         public bool StreetAddressEnabled { get; set; }
         public bool StreetAddressRequired { get; set; }

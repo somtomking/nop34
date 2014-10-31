@@ -15,6 +15,8 @@ namespace Nop.Admin.Models.Common
         {
             AvailableCountries = new List<SelectListItem>();
             AvailableStates = new List<SelectListItem>();
+            AvailableCities = new List<SelectListItem>();
+            AvailableAreas = new List<SelectListItem>();
         }
 
         [NopResourceDisplayName("Admin.Address.Fields.FirstName")]
@@ -91,7 +93,10 @@ namespace Nop.Admin.Models.Common
 
         public IList<SelectListItem> AvailableCountries { get; set; }
         public IList<SelectListItem> AvailableStates { get; set; }
-
+        [Expand(ExpandType.New)]
+        public List<SelectListItem> AvailableCities { get; set; }
+        [Expand(ExpandType.New)]
+        public List<SelectListItem> AvailableAreas { get; set; }
 
 
         public bool FirstNameEnabled { get; set; }
@@ -106,8 +111,7 @@ namespace Nop.Admin.Models.Common
         public bool StateProvinceEnabled { get; set; }
         public bool CityEnabled { get; set; }
         public bool CityRequired { get; set; }
-        [Expand(ExpandType.New)]
-        public bool AllCityInput { get; set; }
+        
         public bool StreetAddressEnabled { get; set; }
         public bool StreetAddressRequired { get; set; }
         public bool StreetAddress2Enabled { get; set; }
@@ -118,6 +122,7 @@ namespace Nop.Admin.Models.Common
         public bool PhoneRequired { get; set; }
         public bool FaxEnabled { get; set; }
         public bool FaxRequired { get; set; }
+
 
     }
 }

@@ -97,7 +97,7 @@ namespace Nop.Web.Extensions
                 model.StateProvinceName = address.StateProvince != null 
                     ? address.StateProvince.GetLocalized(x => x.Name)
                     : null;
-                model.City = address.InputCity;
+                model.InputCity = address.InputCity;
                 model.Address1 = address.Address1;
                 model.Address2 = address.Address2;
                 model.ZipPostalCode = address.ZipPostalCode;
@@ -116,7 +116,7 @@ namespace Nop.Web.Extensions
                 model.Address1 = customer.GetAttribute<string>(SystemCustomerAttributeNames.StreetAddress);
                 model.Address2 = customer.GetAttribute<string>(SystemCustomerAttributeNames.StreetAddress2);
                 model.ZipPostalCode = customer.GetAttribute<string>(SystemCustomerAttributeNames.ZipPostalCode);
-                model.City = customer.GetAttribute<string>(SystemCustomerAttributeNames.City);
+                model.InputCity = customer.GetAttribute<string>(SystemCustomerAttributeNames.InputCity);
                 //ignore country and state for prepopulation. it can cause some issues when posting pack with errors, etc
                 //model.CountryId = customer.GetAttribute<int>(SystemCustomerAttributeNames.CountryId);
                 //model.StateProvinceId = customer.GetAttribute<int>(SystemCustomerAttributeNames.StateProvinceId);
@@ -214,8 +214,8 @@ namespace Nop.Web.Extensions
                     model.Email = model.Email.Trim();
                 if (model.Company != null)
                     model.Company = model.Company.Trim();
-                if (model.City != null)
-                    model.City = model.City.Trim();
+                if (model.InputCity != null)
+                    model.InputCity = model.InputCity.Trim();
                 if (model.Address1 != null)
                     model.Address1 = model.Address1.Trim();
                 if (model.Address2 != null)
@@ -234,7 +234,7 @@ namespace Nop.Web.Extensions
             destination.Company = model.Company;
             destination.CountryId = model.CountryId;
             destination.StateProvinceId = model.StateProvinceId;
-            destination.InputCity = model.City;
+            destination.InputCity = model.InputCity;
             destination.Address1 = model.Address1;
             destination.Address2 = model.Address2;
             destination.ZipPostalCode = model.ZipPostalCode;

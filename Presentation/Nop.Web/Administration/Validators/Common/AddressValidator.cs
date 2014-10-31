@@ -39,7 +39,7 @@ namespace Nop.Admin.Validators.Common
             RuleFor(x => x.InputCity)
                 .NotEmpty()
                 .WithMessage(localizationService.GetResource("Admin.Address.Fields.City.Required"))
-                .When(x => x.CityEnabled && x.CityRequired && x.AllCityInput);
+                .When(x => x.CityEnabled && x.CityRequired && !x.CityId.HasValue);
             RuleFor(x => x.Address1)
                 .NotEmpty()
                 .WithMessage(localizationService.GetResource("Admin.Address.Fields.Address1.Required"))

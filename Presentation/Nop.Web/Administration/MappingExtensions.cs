@@ -744,7 +744,14 @@ namespace Nop.Admin
         {
             return Mapper.Map(model, destination);
         }
-
+        public static CityModel ToModel(this City entity)
+        {
+            return Mapper.Map<City, CityModel>(entity);
+        }
+        public static AreaModel ToModel(this Area entity)
+        {
+            return Mapper.Map<Area, AreaModel>(entity);
+        }
 
         #endregion
 

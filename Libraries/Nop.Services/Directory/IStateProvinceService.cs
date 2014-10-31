@@ -27,7 +27,7 @@ namespace Nop.Services.Directory
         /// <param name="abbreviation">The state/province abbreviation</param>
         /// <returns>State/province</returns>
         StateProvince GetStateProvinceByAbbreviation(string abbreviation);
-        
+
         /// <summary>
         /// Gets a state/province collection by country identifier
         /// </summary>
@@ -35,6 +35,15 @@ namespace Nop.Services.Directory
         /// <param name="showHidden">A value indicating whether to show hidden records</param>
         /// <returns>State/province collection</returns>
         IList<StateProvince> GetStateProvincesByCountryId(int countryId, bool showHidden = false);
+
+        [Nop.Core.Expand.Expand(Core.Expand.ExpandType.New)]
+        IList<City> GetCitiesByStateProvinceId(int stateProvinceId, bool showHidden = false);
+        [Nop.Core.Expand.Expand(Core.Expand.ExpandType.New)]
+        IList<Area> GetAreasByCityId(int cityId, bool showHidden = false);
+        [Nop.Core.Expand.Expand(Core.Expand.ExpandType.New)]
+        City GetCityById(int cityId);
+        [Nop.Core.Expand.Expand(Core.Expand.ExpandType.New)]
+        Area GetAreaById(int areaId);
 
         /// <summary>
         /// Inserts a state/province

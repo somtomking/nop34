@@ -655,7 +655,7 @@ namespace Nop.Admin.Controllers
                 if (_customerSettings.ZipPostalCodeEnabled)
                     _genericAttributeService.SaveAttribute(customer, SystemCustomerAttributeNames.ZipPostalCode, model.ZipPostalCode);
                 if (_customerSettings.CityEnabled)
-                    _genericAttributeService.SaveAttribute(customer, SystemCustomerAttributeNames.City, model.City);
+                    _genericAttributeService.SaveAttribute(customer, SystemCustomerAttributeNames.InputCity, model.InputCity);
                 if (_customerSettings.CountryEnabled)
                     _genericAttributeService.SaveAttribute(customer, SystemCustomerAttributeNames.CountryId, model.CountryId);
                 if (_customerSettings.CountryEnabled && _customerSettings.StateProvinceEnabled)
@@ -825,7 +825,7 @@ namespace Nop.Admin.Controllers
             model.StreetAddress = customer.GetAttribute<string>(SystemCustomerAttributeNames.StreetAddress);
             model.StreetAddress2 = customer.GetAttribute<string>(SystemCustomerAttributeNames.StreetAddress2);
             model.ZipPostalCode = customer.GetAttribute<string>(SystemCustomerAttributeNames.ZipPostalCode);
-            model.City = customer.GetAttribute<string>(SystemCustomerAttributeNames.City);
+            model.InputCity = customer.GetAttribute<string>(SystemCustomerAttributeNames.InputCity);
             model.CountryId = customer.GetAttribute<int>(SystemCustomerAttributeNames.CountryId);
             model.StateProvinceId = customer.GetAttribute<int>(SystemCustomerAttributeNames.StateProvinceId);
             model.Phone = customer.GetAttribute<string>(SystemCustomerAttributeNames.Phone);
@@ -988,7 +988,7 @@ namespace Nop.Admin.Controllers
                     if (_customerSettings.ZipPostalCodeEnabled)
                         _genericAttributeService.SaveAttribute(customer, SystemCustomerAttributeNames.ZipPostalCode, model.ZipPostalCode);
                     if (_customerSettings.CityEnabled)
-                        _genericAttributeService.SaveAttribute(customer, SystemCustomerAttributeNames.City, model.City);
+                        _genericAttributeService.SaveAttribute(customer, SystemCustomerAttributeNames.InputCity, model.InputCity);
                     if (_customerSettings.CountryEnabled)
                         _genericAttributeService.SaveAttribute(customer, SystemCustomerAttributeNames.CountryId, model.CountryId);
                     if (_customerSettings.CountryEnabled && _customerSettings.StateProvinceEnabled)
@@ -1449,11 +1449,11 @@ namespace Nop.Admin.Controllers
 
                     if (_addressSettings.CityEnabled)
                     {
-                        if (!string.IsNullOrEmpty(model.InputCity) && _addressSettings.AllowInputCity)
+                        if (!string.IsNullOrEmpty(model.InputCity))
                         {
                             addressHtmlSb.AppendFormat("{0},", Server.HtmlEncode(model.InputCity));
                         }
-                        else if (_addressSettings.AllowInputCity)
+                        else
                         {
                             addressHtmlSb.AppendFormat("{0},", Server.HtmlEncode(model.CityName));
                             addressHtmlSb.AppendFormat("{0},", Server.HtmlEncode(model.AreaName));
@@ -1629,7 +1629,7 @@ namespace Nop.Admin.Controllers
             model.Address.PhoneRequired = _addressSettings.PhoneRequired;
             model.Address.FaxEnabled = _addressSettings.FaxEnabled;
             model.Address.FaxRequired = _addressSettings.FaxRequired;
-            model.Address.AllCityInput = _addressSettings.AllowInputCity;
+ 
             //countries
             model.Address.AvailableCountries.Add(new SelectListItem() { Text = _localizationService.GetResource("Admin.Address.SelectCountry"), Value = "0" });
             foreach (var c in _countryService.GetAllCountries(true))

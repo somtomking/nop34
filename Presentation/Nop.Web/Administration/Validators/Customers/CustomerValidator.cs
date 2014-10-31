@@ -19,7 +19,7 @@ namespace Nop.Admin.Validators.Customers
             if (customerSettings.ZipPostalCodeRequired && customerSettings.ZipPostalCodeEnabled)
                 RuleFor(x => x.ZipPostalCode).NotEmpty().WithMessage(localizationService.GetResource("Admin.Customers.Customers.Fields.ZipPostalCode.Required"));
             if (customerSettings.CityRequired && customerSettings.CityEnabled)
-                RuleFor(x => x.City).NotEmpty().WithMessage(localizationService.GetResource("Admin.Customers.Customers.Fields.City.Required"));
+                RuleFor(x => x.InputCity).NotEmpty().WithMessage(localizationService.GetResource("Admin.Customers.Customers.Fields.City.Required"));
             if (customerSettings.PhoneRequired && customerSettings.PhoneEnabled)
                 RuleFor(x => x.Phone).NotEmpty().WithMessage(localizationService.GetResource("Admin.Customers.Customers.Fields.Phone.Required"));
             if (customerSettings.FaxRequired && customerSettings.FaxEnabled) 

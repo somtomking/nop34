@@ -28,20 +28,24 @@ namespace Nop.Services.Common
             string firstName, string lastName, string phoneNumber,
             string email, string faxNumber, string company, string address1,
             string address2, string city, int? stateProvinceId,
-            string zipPostalCode, int? countryId)
+            string zipPostalCode, int? countryId,int? cityId,int? areaId)
         {
-            return source.Find((a) => ((String.IsNullOrEmpty(a.FirstName) && String.IsNullOrEmpty(firstName)) || a.FirstName == firstName) &&
-                ((String.IsNullOrEmpty(a.LastName) && String.IsNullOrEmpty(lastName)) || a.LastName == lastName) &&
-                ((String.IsNullOrEmpty(a.PhoneNumber) && String.IsNullOrEmpty(phoneNumber)) || a.PhoneNumber == phoneNumber) &&
-                ((String.IsNullOrEmpty(a.Email) && String.IsNullOrEmpty(email)) || a.Email == email) &&
-                ((String.IsNullOrEmpty(a.FaxNumber) && String.IsNullOrEmpty(faxNumber)) || a.FaxNumber == faxNumber) &&
-                ((String.IsNullOrEmpty(a.Company) && String.IsNullOrEmpty(company)) || a.Company == company) &&
-                ((String.IsNullOrEmpty(a.Address1) && String.IsNullOrEmpty(address1)) || a.Address1 == address1) &&
-                ((String.IsNullOrEmpty(a.Address2) && String.IsNullOrEmpty(address2)) || a.Address2 == address2) &&
-                ((String.IsNullOrEmpty(a.InputCity) && String.IsNullOrEmpty(city)) || a.InputCity == city) &&
-                ((a.StateProvinceId.IsNullOrDefault() && stateProvinceId.IsNullOrDefault()) || a.StateProvinceId == stateProvinceId) &&
-                ((String.IsNullOrEmpty(a.ZipPostalCode) && String.IsNullOrEmpty(zipPostalCode)) || a.ZipPostalCode == zipPostalCode) &&
-                ((a.CountryId.IsNullOrDefault() && countryId.IsNullOrDefault()) || a.CountryId == countryId));
+            return source.Find((a) => 
+                ((String.IsNullOrEmpty(a.FirstName) && String.IsNullOrEmpty(firstName)) || a.FirstName == firstName)
+                &&((String.IsNullOrEmpty(a.LastName) && String.IsNullOrEmpty(lastName)) || a.LastName == lastName) 
+                &&((String.IsNullOrEmpty(a.PhoneNumber) && String.IsNullOrEmpty(phoneNumber)) || a.PhoneNumber == phoneNumber) 
+                &&((String.IsNullOrEmpty(a.Email) && String.IsNullOrEmpty(email)) || a.Email == email) 
+                &&((String.IsNullOrEmpty(a.FaxNumber) && String.IsNullOrEmpty(faxNumber)) || a.FaxNumber == faxNumber) 
+                &&((String.IsNullOrEmpty(a.Company) && String.IsNullOrEmpty(company)) || a.Company == company) 
+                &&((String.IsNullOrEmpty(a.Address1) && String.IsNullOrEmpty(address1)) || a.Address1 == address1) 
+                &&((String.IsNullOrEmpty(a.Address2) && String.IsNullOrEmpty(address2)) || a.Address2 == address2) 
+                &&((String.IsNullOrEmpty(a.InputCity) && String.IsNullOrEmpty(city)) || a.InputCity == city) 
+                &&((a.StateProvinceId.IsNullOrDefault() && stateProvinceId.IsNullOrDefault()) || a.StateProvinceId == stateProvinceId) 
+                &&((String.IsNullOrEmpty(a.ZipPostalCode) && String.IsNullOrEmpty(zipPostalCode)) || a.ZipPostalCode == zipPostalCode) 
+                &&((a.CountryId.IsNullOrDefault() && countryId.IsNullOrDefault()) || a.CountryId == countryId)
+                && ((a.CityId.IsNullOrDefault() && cityId.IsNullOrDefault()) || a.CityId == countryId)
+                && ((a.AreaId.IsNullOrDefault() && areaId.IsNullOrDefault()) || a.AreaId == countryId)
+                );
         }
 
     }

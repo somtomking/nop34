@@ -17,33 +17,33 @@ using Nop.Web.Framework.Mvc;
 namespace Nop.Admin.Controllers
 {
     public partial class CountryController : BaseAdminController
-	{
-		#region Fields
+    {
+        #region Fields
 
         private readonly ICountryService _countryService;
         private readonly IStateProvinceService _stateProvinceService;
         private readonly ILocalizationService _localizationService;
-	    private readonly IAddressService _addressService;
+        private readonly IAddressService _addressService;
         private readonly IPermissionService _permissionService;
-	    private readonly ILocalizedEntityService _localizedEntityService;
+        private readonly ILocalizedEntityService _localizedEntityService;
         private readonly ILanguageService _languageService;
         private readonly IStoreService _storeService;
         private readonly IStoreMappingService _storeMappingService;
 
-	    #endregion
+        #endregion
 
-		#region Constructors
+        #region Constructors
 
         public CountryController(ICountryService countryService,
-            IStateProvinceService stateProvinceService, 
+            IStateProvinceService stateProvinceService,
             ILocalizationService localizationService,
-            IAddressService addressService, 
+            IAddressService addressService,
             IPermissionService permissionService,
-            ILocalizedEntityService localizedEntityService, 
+            ILocalizedEntityService localizedEntityService,
             ILanguageService languageService,
             IStoreService storeService,
             IStoreMappingService storeMappingService)
-		{
+        {
             this._countryService = countryService;
             this._stateProvinceService = stateProvinceService;
             this._localizationService = localizationService;
@@ -53,12 +53,12 @@ namespace Nop.Admin.Controllers
             this._languageService = languageService;
             this._storeService = storeService;
             this._storeMappingService = storeMappingService;
-		}
+        }
 
-		#endregion 
+        #endregion
 
         #region Utilities
-        
+
         [NonAction]
         protected virtual void UpdateLocales(Country country, CountryModel model)
         {
@@ -161,7 +161,7 @@ namespace Nop.Admin.Controllers
 
             return Json(gridModel);
         }
-        
+
         public ActionResult Create()
         {
             if (!_permissionService.Authorize(StandardPermissionProvider.ManageCountries))
@@ -253,7 +253,7 @@ namespace Nop.Admin.Controllers
                     //selected tab
                     SaveSelectedTabIndex();
 
-                    return RedirectToAction("Edit", new {id = country.Id});
+                    return RedirectToAction("Edit", new { id = country.Id });
                 }
                 else
                 {
@@ -351,6 +351,8 @@ namespace Nop.Admin.Controllers
             };
             return Json(gridModel);
         }
+
+
 
         //create
         public ActionResult StateCreatePopup(int countryId)
@@ -477,7 +479,7 @@ namespace Nop.Admin.Controllers
             var country = _countryService.GetCountryById(Convert.ToInt32(countryId));
             var states = country != null ? _stateProvinceService.GetStateProvincesByCountryId(country.Id, true).ToList() : new List<StateProvince>();
             var result = (from s in states
-                         select new { id = s.Id, name = s.Name }).ToList();
+                          select new { id = s.Id, name = s.Name }).ToList();
             if (addEmptyStateIfRequired.HasValue && addEmptyStateIfRequired.Value && result.Count == 0)
                 result.Insert(0, new { id = 0, name = _localizationService.GetResource("Admin.Address.OtherNonUS") });
             if (addAsterisk.HasValue && addAsterisk.Value)
@@ -485,6 +487,84 @@ namespace Nop.Admin.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
+        #endregion
+
+        #region  Cities&&Areas
+        [HttpPost]
+        public ActionResult Cities(int provinceId, DataSourceRequest command)
+        {
+            if (!_permissionService.Authorize(StandardPermissionProvider.ManageCountries))
+                return AccessDeniedView();
+
+            var states = _stateProvinceService.GetCitiesByStateProvinceId(provinceId, true);
+
+            var gridModel = new DataSourceResult
+            {
+                Data = states.Select(x => x.ToModel()),
+                Total = states.Count
+            };
+            return Json(gridModel);
+        }
+        [HttpPost]
+        public ActionResult Areas(int cityId, DataSourceRequest command)
+        {
+            if (!_permissionService.Authorize(StandardPermissionProvider.ManageCountries))
+                return AccessDeniedView();
+
+            var states = _stateProvinceService.GetAreasByCityId(cityId, true);
+
+            var gridModel = new DataSourceResult
+            {
+                Data = states.Select(x => x.ToModel()),
+                Total = states.Count
+            };
+            return Json(gridModel);
+        }
+
+
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult GetCitiesByStateProvinceId(string stateProvinceId,
+            bool? addEmptyStateIfRequired, bool? addAsterisk)
+        {
+            //permission validation is not required here
+
+
+            // This action method gets called via an ajax request
+            if (String.IsNullOrEmpty(stateProvinceId))
+                throw new ArgumentNullException("stateProvinceId");
+
+            var province = _stateProvinceService.GetStateProvinceById(Convert.ToInt32(stateProvinceId));
+            var cities = province != null ? _stateProvinceService.GetCitiesByStateProvinceId(province.Id, true).ToList() : new List<City>();
+            var result = (from s in cities
+                          select new { id = s.Id, name = s.Name }).ToList();
+            if (addEmptyStateIfRequired.HasValue && addEmptyStateIfRequired.Value && result.Count == 0)
+                result.Insert(0, new { id = 0, name = _localizationService.GetResource("Admin.Address.OtherNonUS") });
+            if (addAsterisk.HasValue && addAsterisk.Value)
+                result.Insert(0, new { id = 0, name = "*" });
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult GetAreaCityId(string cityId,
+            bool? addEmptyStateIfRequired, bool? addAsterisk)
+        {
+            
+
+            // This action method gets called via an ajax request
+            if (String.IsNullOrEmpty(cityId))
+                throw new ArgumentNullException("cityId");
+
+            var city = _stateProvinceService.GetCityById(Convert.ToInt32(cityId));
+            var areas = city != null ? _stateProvinceService.GetAreasByCityId(city.Id, true).ToList() : new List<Area>();
+            var result = (from s in areas
+                          select new { id = s.Id, name = s.Name }).ToList();
+            if (addEmptyStateIfRequired.HasValue && addEmptyStateIfRequired.Value && result.Count == 0)
+                result.Insert(0, new { id = 0, name = _localizationService.GetResource("Admin.Address.OtherNonUS") });
+            if (addAsterisk.HasValue && addAsterisk.Value)
+                result.Insert(0, new { id = 0, name = "*" });
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
         #endregion
     }
 }

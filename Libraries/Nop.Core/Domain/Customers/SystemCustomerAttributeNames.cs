@@ -12,9 +12,14 @@ namespace Nop.Core.Domain.Customers
         public static string StreetAddress { get { return "StreetAddress"; } }
         public static string StreetAddress2 { get { return "StreetAddress2"; } }
         public static string ZipPostalCode { get { return "ZipPostalCode"; } }
-        public static string City { get { return "City"; } }
+        [Nop.Core.Expand.Expand(Expand.ExpandType.Update)]
+        public static string InputCity { get { return "InputCity"; } }
         public static string CountryId { get { return "CountryId"; } }
         public static string StateProvinceId { get { return "StateProvinceId"; } }
+        [Nop.Core.Expand.Expand(Expand.ExpandType.New)]
+        public static string CityId { get { return "CityId"; } }
+        [Nop.Core.Expand.Expand(Expand.ExpandType.New)]
+        public static string AreaId { get { return "AreaId"; } }
         public static string Phone { get { return "Phone"; } }
         public static string Fax { get { return "Fax"; } }
         public static string VatNumber { get { return "VatNumber"; } }
