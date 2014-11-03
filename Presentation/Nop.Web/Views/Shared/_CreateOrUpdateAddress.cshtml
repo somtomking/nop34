@@ -21,6 +21,11 @@
             ddlStates.append($('<option></option>').val(option.id).html(option.name));
           });
           statesProgress.hide();
+          if (data.length <= 1) {
+            setCityInputMode();
+          } else {
+            setCitySelectMode();
+          }
         },
         error: function (xhr, ajaxOptions, thrownError) {
           alert('Failed to retrieve states.');
@@ -43,12 +48,17 @@
           $.each(data, function (id, option) {
             ddlCities.append($('<option></option>').val(option.id).html(option.name));
           });
-        },
+          if (data.length<=1) {
+            setCityInputMode();
+          } else {
+            setCitySelectMode();
+          }
+        }, 
         error: function (xhr, ajaxOptions, thrownError) {
           alert('Failed to retrieve states.');
         }
       });
-    });
+    });   
     $("#@Html.FieldIdFor(model => model.CityId)").change(function () {
       var selectedItem = $(this).val();
       var ddlAreas = $("#@Html.FieldIdFor(model => model.AreaId)");
@@ -68,8 +78,40 @@
         }
       });
     });
-
+    setCityInputViewState(false);
+    setCitySelectViewState(false);
   });
+
+    function setCityInputMode()
+    {
+      setCityInputViewState(true);
+      setCitySelectViewState(false);
+    }
+    
+    function setCitySelectMode() {
+      setCityInputViewState(false);
+      setCitySelectViewState(true);
+    }
+    function setCityInputViewState(show)
+    {
+      if (show) {
+        $("#div_@Html.FieldIdFor(model=>model.InputCity)").show();
+      } else {
+        $("#div_@Html.FieldIdFor(model => model.InputCity)").hide();
+      }
+          
+    }
+    function setCitySelectViewState(show)
+    {
+      if (show) {
+        $("#div_@Html.FieldIdFor(model=>model.AreaId)").show();
+        $("#div_@Html.FieldIdFor(model=>model.CityId)").show();
+      } else {
+        $("#div_@Html.FieldIdFor(model=>model.AreaId)").hide();
+        $("#div_@Html.FieldIdFor(model=>model.CityId)").hide();
+      }
+    }
+ 
   </script>
 }
 @Html.HiddenFor(model => model.Id)
@@ -126,7 +168,7 @@
   }
   @if (Model.CityEnabled)
   {
-    <div class="inputs">
+    <div class="inputs" id="div_@Html.FieldIdFor(model=>model.InputCity)">
       @Html.LabelFor(model => model.InputCity, new { }, ":")
       @Html.EditorFor(model => model.InputCity)
 
@@ -136,26 +178,27 @@
       }
       @Html.ValidationMessageFor(model => model.InputCity)
     </div>
-    <div class="inputs">
-      @Html.LabelFor(model => model.CityId, new { }, ":")
-      @Html.DropDownListFor(model => model.CityId, Model.AvailableCities)
 
-      @if (Model.CityRequired)
-      {
-        @Html.RequiredHint()
-      }
-      @Html.ValidationMessageFor(model => model.CityId)
-    </div>
-    <div class="inputs">
-      @Html.LabelFor(model => model.AreaId, new { }, ":")
-      @Html.DropDownListFor(model => model.AreaId, Model.AvailableAreas)
+  <div class="inputs" id="div_@Html.FieldIdFor(model=>model.CityId)">
+    @Html.LabelFor(model => model.CityId, new { }, ":")
+    @Html.DropDownListFor(model => model.CityId, Model.AvailableCities)
 
-      @if (Model.CityRequired)
-      {
-        @Html.RequiredHint()
-      }
-      @Html.ValidationMessageFor(model => model.AreaId)
-    </div>
+    @if (Model.CityRequired)
+    {
+      @Html.RequiredHint()
+    }
+    @Html.ValidationMessageFor(model => model.CityId)
+  </div>
+  <div class="inputs" id="div_@Html.FieldIdFor(model=>model.AreaId)">
+    @Html.LabelFor(model => model.AreaId, new { }, ":")
+    @Html.DropDownListFor(model => model.AreaId, Model.AvailableAreas)
+
+    @if (Model.CityRequired)
+    {
+      @Html.RequiredHint()
+    }
+    @Html.ValidationMessageFor(model => model.AreaId)
+  </div>
   }
   @if (Model.StreetAddressEnabled)
   {
